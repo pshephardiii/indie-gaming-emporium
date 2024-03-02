@@ -1,50 +1,43 @@
 require('dotenv').config();
 require('./database');
 
-const Category = require('../models/category');
-const Item = require('../models/item');
+const Genre = require('../models/genre');
+const Game = require('../models/game');
 
 (async function() {
 
-  await Category.deleteMany({});
-  const categories = await Category.create([
-    {name: 'Sandwiches', sortOrder: 10},
-    {name: 'Seafood', sortOrder: 20},
-    {name: 'Mexican', sortOrder: 30},
-    {name: 'Italian', sortOrder: 40},
-    {name: 'Sides', sortOrder: 50},
-    {name: 'Desserts', sortOrder: 60},
-    {name: 'Drinks', sortOrder: 70},
+  await Genre.deleteMany({});
+  const genres = await Genre.create([
+    {name: 'Adventure', sortOrder: 10},
+    {name: 'Action', sortOrder: 20},
+    {name: 'RPG', sortOrder: 30},
+    {name: 'Horror', sortOrder: 40},
+    {name: 'Casual', sortOrder: 50}
   ]);
 
-  await Item.deleteMany({});
-  const items = await Item.create([
-    {name: 'Hamburger', emoji: '🍔', category: categories[0], price: 5.95},
-    {name: 'Turkey Sandwich', emoji: '🥪', category: categories[0], price: 6.95},
-    {name: 'Hot Dog', emoji: '🌭', category: categories[0], price: 3.95},
-    {name: 'Crab Plate', emoji: '🦀', category: categories[1], price: 14.95},
-    {name: 'Fried Shrimp', emoji: '🍤', category: categories[1], price: 13.95},
-    {name: 'Whole Lobster', emoji: '🦞', category: categories[1], price: 25.95},
-    {name: 'Taco', emoji: '🌮', category: categories[2], price: 1.95},
-    {name: 'Burrito', emoji: '🌯', category: categories[2], price: 4.95},
-    {name: 'Pizza Slice', emoji: '🍕', category: categories[3], price: 3.95},
-    {name: 'Spaghetti', emoji: '🍝', category: categories[3], price: 7.95},
-    {name: 'Garlic Bread', emoji: '🍞', category: categories[3], price: 1.95},
-    {name: 'French Fries', emoji: '🍟', category: categories[4], price: 2.95},
-    {name: 'Green Salad', emoji: '🥗', category: categories[4], price: 3.95},
-    {name: 'Ice Cream', emoji: '🍨', category: categories[5], price: 1.95},
-    {name: 'Cup Cake', emoji: '🧁', category: categories[5], price: 0.95},
-    {name: 'Custard', emoji: '🍮', category: categories[5], price: 2.95},
-    {name: 'Strawberry Shortcake', emoji: '🍰', category: categories[5], price: 3.95},
-    {name: 'Milk', emoji: '🥛', category: categories[6], price: 0.95},
-    {name: 'Coffee', emoji: '☕', category: categories[6], price: 0.95},
-    {name: 'Mai Tai', emoji: '🍹', category: categories[6], price: 8.95},
-    {name: 'Beer', emoji: '🍺', category: categories[6], price: 3.95},
-    {name: 'Wine', emoji: '🍷', category: categories[6], price: 7.95},
+  await Game.deleteMany({});
+  const games = await Game.create([
+    {name: 'Forgotten Worlds', image: '', description: '', genre: genres[0], price: 19.99},
+    {name: `Roscoe's Journey`, image: '', description: '', genre: genres[0], price: 9.99},
+    {name: 'Summit', image: '', description: '', genre: genres[0], price: 19.99},
+    {name: 'Katana Sunset', image: '', description: '', genre: genres[1], price: 34.99},
+    {name: 'Ex Nihilo: Phantom Glitch', image: '', description: '', genre: genres[1], price: 29.99},
+    {name: 'Rusted Gauge', image: '', description: '', genre: genres[1], price: 24.99},
+    {name: 'Homeward', image: '', description: '', genre: genres[2], price: 19.99},
+    {name: 'Oblivion Rainbow', image: '', description: '', genre: genres[2], price: 29.99},
+    {name: 'Sacrilege', image: '', description: '', genre: genres[2], price: 39.99},
+    {name: `Devil's Playground`, image: '', description: '', genre: genres[3], price: 29.99},
+    {name: 'Quiet Plateau: Sins of the Father', image: '', description: '', genre: genres[3], price: 19.99},
+    {name: 'Traumatica', image: '', description: '', genre: genres[3], price: 14.99},
+    {name: 'Ball Boy Mania!', image: '', description: '', genre: genres[4], price: 4.99},
+    {name: 'Tax Audit Simulator', image: '', description: '', genre: genres[4], price: 14.99},
+    {name: 'Bubble Buddy', image: '', description: '', genre: genres[4], price: 9.99},
+
   ]);
 
-  console.log(items)
+  console.log(games)
 
   process.exit();
 
 })();
+
