@@ -63,12 +63,12 @@ orderSchema.methods.addGameToCart = async function(gameId) {
 };
 
 // Instance method to set an item's qty in the cart (will add item if does not exist)
-orderSchema.methods.setGamemQty = function(gameId, newQty) {
+orderSchema.methods.setGameQty = function(gameId, newQty) {
   // this keyword is bound to the cart (order doc)
   const cart = this;
   // Find the line item in the cart for the menu item
   const lineGame = cart.lineGames.find(lineGame => lineGame.game._id.equals(gameId));
-  if (lineItem && newQty <= 0) {
+  if (lineGame && newQty <= 0) {
     // Calling remove, removes itself from the cart.lineItems array
     lineGame.deleteOne();
   } else if (lineGame) {
