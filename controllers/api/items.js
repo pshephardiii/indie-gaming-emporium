@@ -1,16 +1,16 @@
-const Item = require('../../models/item');
+const Game = require('../../models/game');
 
 module.exports = {
-  index,
+  indexByGenre,
   show
 };
 
-async function index(req, res) {
+async function indexByGenre(req, res) {
   try{
-    const items = await Item.find({}).sort('name').populate('category').exec();
+    const games = await Game.find({ genre: req.params.genre }).sort('name').populate('genre').exec();
     // re-sort based upon the sortOrder of the categories
-    items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
-    res.status(200).json(items);
+    games.sort((a, b) => a.genre.sortOrder - b.genre.sortOrder);
+    res.status(200).json(games);
   }catch(e){
     res.status(400).json({ msg: e.message });
   }
@@ -18,8 +18,8 @@ async function index(req, res) {
 
 async function show(req, res) {
   try{
-    const item = await Item.findById(req.params.id);
-    res.status(200).json(item);
+    const game = await Game.findById(req.params.id);
+    res.status(200).json(game);
   }catch(e){
     res.status(400).json({ msg: e.message });
   }  
