@@ -27,7 +27,7 @@ const AppRouter = () => {
 						}
 					></Route>
 				))}
-				<Route path='/*' element={<Navigate to="/orders/new"/>}/>
+				<Route path='/*' element={<Navigate to="/home"/>}/>
 			</Routes>
 			</>
 			:
