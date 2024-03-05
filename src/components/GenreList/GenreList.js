@@ -15,14 +15,13 @@ export default function GenreList({ user, setUser }) {
     })
 
     const genreList = genres.map(gen =>
-        <GenreListItem
+        <li key={gen._id}><GenreListItem
             user={user}
             setUser={setUser}
             genres={genres}
             setGenres={setGenres}
             gen={gen}
-            key={gen._id}
-        >{gen.name}</GenreListItem>)
+        >{gen.name}</GenreListItem></li>)
 
     return(
         <ul>

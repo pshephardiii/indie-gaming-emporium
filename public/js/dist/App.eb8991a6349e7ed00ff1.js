@@ -73,14 +73,15 @@ function GenreList(_ref) {
     }
     getGenres();
   });
-  const genreList = genres.map(gen => /*#__PURE__*/React.createElement(_GenreListItem_GenreListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  const genreList = genres.map(gen => /*#__PURE__*/React.createElement("li", {
+    key: gen._id
+  }, /*#__PURE__*/React.createElement(_GenreListItem_GenreListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     genres: genres,
     setGenres: setGenres,
-    gen: gen,
-    key: gen._id
-  }, gen.name));
+    gen: gen
+  }, gen.name)));
   return /*#__PURE__*/React.createElement("ul", null, genreList);
 }
 
@@ -95,7 +96,9 @@ function GenreList(_ref) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ GenreListItem)
 /* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
 function GenreListItem(_ref) {
   let {
     user,
@@ -104,7 +107,9 @@ function GenreListItem(_ref) {
     setGenres,
     gen
   } = _ref;
-  return /*#__PURE__*/React.createElement("h1", null, gen.name);
+  return /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.Link, {
+    to: "/index/".concat(gen.name)
+  }, gen.name);
 }
 
 /***/ }),
@@ -606,6 +611,46 @@ root.render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_0__
 
 /***/ }),
 
+/***/ "./src/pages/ActionIndexPage/ActionIndexPage.js":
+/*!******************************************************!*\
+  !*** ./src/pages/ActionIndexPage/ActionIndexPage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ActionIndexPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function ActionIndexPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "Action Index Page");
+}
+
+/***/ }),
+
+/***/ "./src/pages/AdventureIndexPage/AdventureIndexPage.js":
+/*!************************************************************!*\
+  !*** ./src/pages/AdventureIndexPage/AdventureIndexPage.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AdventureIndexPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function AdventureIndexPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "Adventure Index Page");
+}
+
+/***/ }),
+
 /***/ "./src/pages/AuthPage/AuthPage.js":
 /*!****************************************!*\
   !*** ./src/pages/AuthPage/AuthPage.js ***!
@@ -645,6 +690,26 @@ function AuthPage(_ref) {
 
 /***/ }),
 
+/***/ "./src/pages/CasualIndexPage/CasualIndexPage.js":
+/*!******************************************************!*\
+  !*** ./src/pages/CasualIndexPage/CasualIndexPage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CasualIndexPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function CasualIndexPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "Casual Index Page");
+}
+
+/***/ }),
+
 /***/ "./src/pages/HomePage/HomePage.js":
 /*!****************************************!*\
   !*** ./src/pages/HomePage/HomePage.js ***!
@@ -666,6 +731,26 @@ function HomePage(_ref) {
     user: user,
     setUser: setUser
   });
+}
+
+/***/ }),
+
+/***/ "./src/pages/HorrorIndexPage/HorrorIndexPage.js":
+/*!******************************************************!*\
+  !*** ./src/pages/HorrorIndexPage/HorrorIndexPage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HorrorIndexPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function HorrorIndexPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "Horror Index Page");
 }
 
 /***/ }),
@@ -885,6 +970,26 @@ function OrderHistoryPage(_ref) {
 
 /***/ }),
 
+/***/ "./src/pages/RPGIndexPage/RPGIndexPage.js":
+/*!************************************************!*\
+  !*** ./src/pages/RPGIndexPage/RPGIndexPage.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RPGIndexPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function RPGIndexPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "RPG Index Page");
+}
+
+/***/ }),
+
 /***/ "./src/router/index.js":
 /*!*****************************!*\
   !*** ./src/router/index.js ***!
@@ -951,23 +1056,53 @@ const AppRouter = () => {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _pages_HomePage_HomePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/HomePage/HomePage */ "./src/pages/HomePage/HomePage.js");
-/* harmony import */ var _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/NewOrderPage/NewOrderPage */ "./src/pages/NewOrderPage/NewOrderPage.js");
-/* harmony import */ var _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/OrderHistoryPage/OrderHistoryPage */ "./src/pages/OrderHistoryPage/OrderHistoryPage.js");
+/* harmony import */ var _pages_ActionIndexPage_ActionIndexPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/ActionIndexPage/ActionIndexPage */ "./src/pages/ActionIndexPage/ActionIndexPage.js");
+/* harmony import */ var _pages_AdventureIndexPage_AdventureIndexPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/AdventureIndexPage/AdventureIndexPage */ "./src/pages/AdventureIndexPage/AdventureIndexPage.js");
+/* harmony import */ var _pages_CasualIndexPage_CasualIndexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/CasualIndexPage/CasualIndexPage */ "./src/pages/CasualIndexPage/CasualIndexPage.js");
+/* harmony import */ var _pages_HorrorIndexPage_HorrorIndexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/HorrorIndexPage/HorrorIndexPage */ "./src/pages/HorrorIndexPage/HorrorIndexPage.js");
+/* harmony import */ var _pages_RPGIndexPage_RPGIndexPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/RPGIndexPage/RPGIndexPage */ "./src/pages/RPGIndexPage/RPGIndexPage.js");
+/* harmony import */ var _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/NewOrderPage/NewOrderPage */ "./src/pages/NewOrderPage/NewOrderPage.js");
+/* harmony import */ var _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/OrderHistoryPage/OrderHistoryPage */ "./src/pages/OrderHistoryPage/OrderHistoryPage.js");
+
+
+
+
+
 
 
 
 const routes = [{
-  Component: _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_1__["default"],
+  Component: _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_6__["default"],
   key: 'NewOrder',
   path: '/orders/new'
 }, {
-  Component: _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_2__["default"],
+  Component: _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_7__["default"],
   key: 'OrderHistory',
   path: '/orders'
 }, {
   Component: _pages_HomePage_HomePage__WEBPACK_IMPORTED_MODULE_0__["default"],
   key: 'Home',
   path: '/home'
+}, {
+  Component: _pages_ActionIndexPage_ActionIndexPage__WEBPACK_IMPORTED_MODULE_1__["default"],
+  key: 'ActionIndex',
+  path: '/index/action'
+}, {
+  Component: _pages_AdventureIndexPage_AdventureIndexPage__WEBPACK_IMPORTED_MODULE_2__["default"],
+  key: 'AdventureIndex',
+  path: '/index/adventure'
+}, {
+  Component: _pages_CasualIndexPage_CasualIndexPage__WEBPACK_IMPORTED_MODULE_3__["default"],
+  key: 'CasualIndex',
+  path: '/index/casual'
+}, {
+  Component: _pages_HorrorIndexPage_HorrorIndexPage__WEBPACK_IMPORTED_MODULE_4__["default"],
+  key: 'HorrorIndex',
+  path: '/index/horror'
+}, {
+  Component: _pages_RPGIndexPage_RPGIndexPage__WEBPACK_IMPORTED_MODULE_5__["default"],
+  key: 'RPGIndex',
+  path: '/index/rpg'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
 
