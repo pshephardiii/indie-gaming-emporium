@@ -150,6 +150,25 @@ function CategoryList(_ref) {
 
 /***/ }),
 
+/***/ "./src/components/Game/Game.js":
+/*!*************************************!*\
+  !*** ./src/components/Game/Game.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* unused harmony export default */
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function Game(_ref) {
+  let {
+    user,
+    setUser,
+    game
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "I am the game baby");
+}
+
+/***/ }),
+
 /***/ "./src/components/GameList/GameList.js":
 /*!*********************************************!*\
   !*** ./src/components/GameList/GameList.js ***!
@@ -1273,13 +1292,51 @@ function OrderHistoryPage(_ref) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ShowPage)
 /* harmony export */ });
+/* harmony import */ var _components_Game_Game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Game/Game */ "./src/components/Game/Game.js");
+/* harmony import */ var _utilities_games_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/games-api */ "./src/utilities/games-api.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
 function ShowPage(_ref) {
   let {
     user,
     setUser
   } = _ref;
-  return /*#__PURE__*/React.createElement("h1", null, "This is the show page");
+  const [game, setGame] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    name: '',
+    image: '',
+    description: '',
+    genre: '',
+    price: 0
+  });
+  const {
+    id
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    function getGame() {
+      return _getGame.apply(this, arguments);
+    }
+    function _getGame() {
+      _getGame = _asyncToGenerator(function* () {
+        try {
+          const currentGame = yield _utilities_games_api__WEBPACK_IMPORTED_MODULE_3__.getById(id);
+          setGame(currentGame);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      return _getGame.apply(this, arguments);
+    }
+    getGame();
+  }, []);
+  return /*#__PURE__*/React.createElement("h1", null, game.name);
 }
 
 /***/ }),
@@ -1391,9 +1448,9 @@ const routes = [{
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getByGenre: () => (/* binding */ getByGenre)
+/* harmony export */   getByGenre: () => (/* binding */ getByGenre),
+/* harmony export */   getById: () => (/* binding */ getById)
 /* harmony export */ });
-/* unused harmony export getById */
 /* harmony import */ var _send_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-request */ "./src/utilities/send-request.js");
 
 const BASE_URL = '/api/games';
