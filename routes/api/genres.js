@@ -6,4 +6,6 @@ router.get('/', genresCtrl.indexGenres);
 
 router.get('/:genreId', genresCtrl.getGenre);
 
+router.get('/genre-name/:name', genresCtrl.getGenreByName)
+
 module.exports = router;
