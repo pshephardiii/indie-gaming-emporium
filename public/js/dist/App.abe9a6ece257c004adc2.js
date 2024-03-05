@@ -192,7 +192,9 @@ function GameList(_ref) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ GameListItem)
 /* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
 function GameListItem(_ref) {
   let {
     user,
@@ -200,7 +202,9 @@ function GameListItem(_ref) {
     games,
     game
   } = _ref;
-  return /*#__PURE__*/React.createElement("h1", null, "game list item");
+  return /*#__PURE__*/React.createElement("h1", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.Link, {
+    to: "/games/".concat(game._id)
+  }, game.name));
 }
 
 /***/ }),
@@ -1260,6 +1264,26 @@ function OrderHistoryPage(_ref) {
 
 /***/ }),
 
+/***/ "./src/pages/ShowPage/ShowPage.js":
+/*!****************************************!*\
+  !*** ./src/pages/ShowPage/ShowPage.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ShowPage)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function ShowPage(_ref) {
+  let {
+    user,
+    setUser
+  } = _ref;
+  return /*#__PURE__*/React.createElement("h1", null, "This is the show page");
+}
+
+/***/ }),
+
 /***/ "./src/router/index.js":
 /*!*****************************!*\
   !*** ./src/router/index.js ***!
@@ -1327,18 +1351,20 @@ const AppRouter = () => {
 /* harmony export */ });
 /* harmony import */ var _pages_HomePage_HomePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/HomePage/HomePage */ "./src/pages/HomePage/HomePage.js");
 /* harmony import */ var _pages_IndexPage_IndexPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/IndexPage/IndexPage */ "./src/pages/IndexPage/IndexPage.js");
-/* harmony import */ var _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/NewOrderPage/NewOrderPage */ "./src/pages/NewOrderPage/NewOrderPage.js");
-/* harmony import */ var _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/OrderHistoryPage/OrderHistoryPage */ "./src/pages/OrderHistoryPage/OrderHistoryPage.js");
+/* harmony import */ var _pages_ShowPage_ShowPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/ShowPage/ShowPage */ "./src/pages/ShowPage/ShowPage.js");
+/* harmony import */ var _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/NewOrderPage/NewOrderPage */ "./src/pages/NewOrderPage/NewOrderPage.js");
+/* harmony import */ var _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/OrderHistoryPage/OrderHistoryPage */ "./src/pages/OrderHistoryPage/OrderHistoryPage.js");
+
 
 
 
 
 const routes = [{
-  Component: _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_2__["default"],
+  Component: _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_3__["default"],
   key: 'NewOrder',
   path: '/orders/new'
 }, {
-  Component: _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_3__["default"],
+  Component: _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_4__["default"],
   key: 'OrderHistory',
   path: '/orders'
 }, {
@@ -1347,8 +1373,12 @@ const routes = [{
   path: '/home'
 }, {
   Component: _pages_IndexPage_IndexPage__WEBPACK_IMPORTED_MODULE_1__["default"],
-  key: 'IndexPage',
+  key: 'Index',
   path: '/index/:id'
+}, {
+  Component: _pages_ShowPage_ShowPage__WEBPACK_IMPORTED_MODULE_2__["default"],
+  key: 'Show',
+  path: '/games/:id'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
 
