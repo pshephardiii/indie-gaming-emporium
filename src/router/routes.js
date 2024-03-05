@@ -1,6 +1,4 @@
-import HomePage from '../pages/HomePage/HomePage';
-import ShowPage from '../pages/ShowPage/ShowPage';
-import GenreIndexPage from '../pages/GenreIndexPage/GenreIndexPage';
+import HomePage from '../pages/HomePage/HomePage'
 import NewOrderPage from '../pages/NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../pages/OrderHistoryPage/OrderHistoryPage';
 
@@ -21,6 +19,7 @@ const routes = [
 		key: 'Home',
 		path: '/home'
 	}
+
 ];
 
 export default routes;

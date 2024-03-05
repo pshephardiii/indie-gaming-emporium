@@ -2,8 +2,8 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/games';
 
-export function indexByGenre() {
-  return sendRequest(`${BASE_URL}/genre/${genreId}`);
+export function getAll() {
+  return sendRequest(BASE_URL);
 }
 
 export function getById(id) {

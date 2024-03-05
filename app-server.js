@@ -2,9 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const morgan = require('morgan')
-const userRoutes = require('./routes/api/users')
-const gameRoutes = require('./routes/api/games')
-const orderRoutes = require('./routes/api/orders')
+
 
 app.use(express.json())
 app.use((req, res, next) => {

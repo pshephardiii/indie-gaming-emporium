@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import * as itemsAPI from '../../utilities/games-api';
+import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import styles from './NewOrderPage.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import MenuList from '../../components/MenuList/MenuList';
-import GenreList from '../../components/GenreList/GenreList';
+import CategoryList from '../../components/CategoryList/CategoryList'
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
