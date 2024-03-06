@@ -12,8 +12,10 @@ export default function GameList({ user, setUser, games, genre, setGenre }) {
         ></GameListItem></li>)
 
     return(
-        <ul className={styles.gameList}>
-            {gameList}
-        </ul>
+        <div className={styles.gameList}>
+            <ul className={styles.list}>
+                {gameList}
+            </ul>
+        </div>
     )
 }

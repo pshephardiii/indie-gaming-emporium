@@ -13,7 +13,7 @@ const AppRouter = () => {
 			{
 				user ?
 			<>
-			<Routes>
+			<Routes className={styles.Routes}>
 				{routes.map(({ Component, key, path }) => (
 					<Route
 						key={key}

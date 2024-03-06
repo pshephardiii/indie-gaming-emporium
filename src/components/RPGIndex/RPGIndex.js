@@ -5,7 +5,7 @@ import GameList from '../../components/GameList/GameList'
 export default function RPGIndex({ user, setUser, games, setGames, genre, setGenre }){
 
     return(
-        <div className={styles.rpgIndexPage}>
+        <div className={styles.RPGIndex}>
             <GameList 
             user={user} 
             setUser={setUser} 

@@ -12,7 +12,7 @@ export default function GenreList({ user, setUser }) {
             setGenres(allGenres)
         }
         getGenres()
-    })
+    }, [])
 
     const genreList = genres.map(gen =>
         <li key={gen._id}><GenreListItem

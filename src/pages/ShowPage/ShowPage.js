@@ -1,5 +1,6 @@
 import Game from '../../components/Game/Game'
 import * as gamesAPI from '../../utilities/games-api'
+import styles from './ShowPage.module.scss'
 import { useParams } from 'react-router-dom'
 import {useState, useEffect } from 'react'
 
@@ -29,6 +30,8 @@ useEffect(function() {
 }, [])
 
     return(
-        <Game user={user} setUser={setUser} game={game}/>
+        <div className={styles.ShowPage}>
+           <Game user={user} setUser={setUser} game={game}/>
+        </div>
     )
 }

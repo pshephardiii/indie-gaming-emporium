@@ -5,7 +5,7 @@ import GameList from '../../components/GameList/GameList'
 export default function CasualIndex({ user, setUser, games, setGames, genre, setGenre }){
 
     return(
-        <div className={styles.casualIndexPage}>
+        <div className={styles.casualIndex}>
             <GameList 
             user={user} 
             setUser={setUser} 

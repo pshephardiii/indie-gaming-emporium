@@ -1,5 +1,11 @@
 .gameList {
     display: flex;
-    justify-content: space-around;
-    list-style: none;
+    align-items: center;
+    justify-content: center;
+    .list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10rem;
+        list-style: none;
+    }
 }

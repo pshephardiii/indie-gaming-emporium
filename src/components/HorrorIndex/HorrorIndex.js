@@ -5,7 +5,7 @@ import GameList from '../../components/GameList/GameList'
 export default function HorrorIndex({ user, setUser, games, setGames, genre, setGenre }){
 
     return(
-        <div className={styles.horrorIndexPage}>
+        <div className={styles.horrorIndex}>
             <GameList 
             user={user} 
             setUser={setUser} 
