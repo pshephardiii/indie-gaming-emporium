@@ -5,7 +5,7 @@ const Schema = require('mongoose').Schema;
 const gameSchema = new Schema({
   name: { type: String, required: true },
   image: String,
-  description: String,
+  description: { type: Schema.Types.ObjectId, ref: 'GameDescription'},
   genre: { type: Schema.Types.ObjectId, ref: 'Genre' },
   price: { type: Number, required: true, default: 0 }
 }, {

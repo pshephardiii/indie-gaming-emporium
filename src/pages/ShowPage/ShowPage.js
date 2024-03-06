@@ -29,6 +29,6 @@ useEffect(function() {
 }, [])
 
     return(
-        <h1>{game.name}</h1>
+        <Game user={user} setUser={setUser} game={game}/>
     )
 }

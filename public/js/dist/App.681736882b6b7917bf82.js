@@ -156,15 +156,80 @@ function CategoryList(_ref) {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* unused harmony export default */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Game)
+/* harmony export */ });
+/* harmony import */ var _GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../GameDescription/GameDescription */ "./src/components/GameDescription/GameDescription.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
 function Game(_ref) {
   let {
     user,
     setUser,
     game
   } = _ref;
-  return /*#__PURE__*/React.createElement("h1", null, "I am the game baby");
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, game.name), /*#__PURE__*/React.createElement(_GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    user: user,
+    setUser: setUser,
+    game: game
+  }));
+}
+
+/***/ }),
+
+/***/ "./src/components/GameDescription/GameDescription.js":
+/*!***********************************************************!*\
+  !*** ./src/components/GameDescription/GameDescription.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ GameDescription)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities_game_descriptions_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities/game-descriptions-api */ "./src/utilities/game-descriptions-api.js");
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+function GameDescription(_ref) {
+  let {
+    user,
+    setUser,
+    game
+  } = _ref;
+  const [description, setDescription] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    opening: '',
+    synopsis: '',
+    features: '',
+    closing: ''
+  });
+  const isMounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  const gameDescription = game.description;
+  console.log(gameDescription);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    function getDescription() {
+      return _getDescription.apply(this, arguments);
+    }
+    function _getDescription() {
+      _getDescription = _asyncToGenerator(function* () {
+        try {
+          console.log(gameDescription);
+          const currentDes = yield _utilities_game_descriptions_api__WEBPACK_IMPORTED_MODULE_1__.getById(gameDescription);
+          setDescription(currentDes);
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      return _getDescription.apply(this, arguments);
+    }
+    if (isMounted.current && gameDescription) {
+      getDescription();
+    } else isMounted.current = true;
+  }, [gameDescription]);
+  return /*#__PURE__*/React.createElement("h4", null, description.opening);
 }
 
 /***/ }),
@@ -1336,7 +1401,11 @@ function ShowPage(_ref) {
     }
     getGame();
   }, []);
-  return /*#__PURE__*/React.createElement("h1", null, game.name);
+  return /*#__PURE__*/React.createElement(_components_Game_Game__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    user: user,
+    setUser: setUser,
+    game: game
+  });
 }
 
 /***/ }),
@@ -1438,6 +1507,24 @@ const routes = [{
   path: '/games/:id'
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (routes);
+
+/***/ }),
+
+/***/ "./src/utilities/game-descriptions-api.js":
+/*!************************************************!*\
+  !*** ./src/utilities/game-descriptions-api.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getById: () => (/* binding */ getById)
+/* harmony export */ });
+/* harmony import */ var _send_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-request */ "./src/utilities/send-request.js");
+
+const BASE_URL = '/api/descriptions';
+function getById(id) {
+  return (0,_send_request__WEBPACK_IMPORTED_MODULE_0__["default"])("".concat(BASE_URL, "/").concat(id));
+}
 
 /***/ }),
 

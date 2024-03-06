@@ -1,5 +1,13 @@
-export default function Game( {user, setUser, game }) {
+import GameDescription from '../GameDescription/GameDescription'
+
+
+
+export default function Game({ user, setUser, game }) {
+
     return(
-        <h1>I am the game baby</h1>
+        <div>
+            <h1>{game.name}</h1>
+            <GameDescription user={user} setUser={setUser} game={game}/>
+        </div>
     )
 }
