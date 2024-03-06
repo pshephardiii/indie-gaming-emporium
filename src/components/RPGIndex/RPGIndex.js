@@ -6,7 +6,6 @@ export default function RPGIndex({ user, setUser, games, setGames, genre, setGen
 
     return(
         <div className={styles.rpgIndexPage}>
-            <p>HELLO</p>
             <GameList 
             user={user} 
             setUser={setUser} 

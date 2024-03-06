@@ -6,7 +6,6 @@ export default function HorrorIndex({ user, setUser, games, setGames, genre, set
 
     return(
         <div className={styles.horrorIndexPage}>
-            <p>HELLO</p>
             <GameList 
             user={user} 
             setUser={setUser} 

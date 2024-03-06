@@ -6,7 +6,6 @@ export default function ActionIndex({ user, setUser, games, setGames, genre, set
 
     return(
         <div className={styles.actionIndex}>
-            <p className={styles.p}>HELLO</p>
             <GameList 
             user={user} 
             setUser={setUser} 

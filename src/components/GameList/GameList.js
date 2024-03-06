@@ -1,4 +1,5 @@
 import GameListItem from '../GameListItem/GameListItem'
+import styles from './GameList.module.scss'
 
 export default function GameList({ user, setUser, games, genre, setGenre }) {
 
@@ -11,7 +12,7 @@ export default function GameList({ user, setUser, games, genre, setGenre }) {
         ></GameListItem></li>)
 
     return(
-        <ul>
+        <ul className={styles.gameList}>
             {gameList}
         </ul>
     )
