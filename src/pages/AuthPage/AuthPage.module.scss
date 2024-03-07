@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');
 
 
 .AuthPage {
@@ -10,18 +12,41 @@
     background-image: url('https://i.imgur.com/GZAmRtb.jpeg');
     background-size: cover;
     border-radius: 2vmin;
-    .title {
-      font-size: 4vmin;
-      margin-left: auto;
-      margin-right: auto;
+    .header{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        font-size: 4vmin;
+        margin-left: auto;
+        margin-right: auto;
+        color: yellow;
+        font-family: "Chelsea Market", sans-serif;
+        text-shadow: 2px 2px 1px black;
+      }
+      .toggle {
+        margin-top: 4vmin;
+        font-size: 3.5vmin;
+        padding: .5rem;
+        width: 15vmin;
+        background-color: red;
+        border-radius: 20px;
+        font-family: "Anta", sans-serif;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 1px black;
+        cursor: pointer;
+      }
+      .toggle:hover {
+        background-color: lightblue;
+        color: red;
+        text-shadow: 2px 2px 1px black;
+      }
     }
+
+    
 
   }
   
-  .AuthPage h3 {
-    margin-top: 4vmin;
-    font-size: 4vmin;
-    text-align: center;
-    color: black;
-    cursor: pointer;
-  }

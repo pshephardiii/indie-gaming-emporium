@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');
+
+.formContainer {
+    background-color: grey;
+    border-radius: 10px;
+    border: 2px solid red;
+    padding: 2rem;
+    
+    .form {
+        .label {
+            font-size: 3.5vmin;
+            margin-left: auto;
+            margin-right: auto;
+            color: yellow;
+            font-family: "Chelsea Market", sans-serif;
+            text-shadow: 2px 2px 1px black;
+        }
+        .input {
+            border: 2px solid black;
+        }
+        .button {
+            width: 20vmin;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 3.5vmin;
+        }
+    }
+}
