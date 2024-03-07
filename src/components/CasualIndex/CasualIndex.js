@@ -6,6 +6,7 @@ export default function CasualIndex({ user, setUser, games, setGames, genre, set
 
     return(
         <div className={styles.casualIndex}>
+            <h1 className={styles.title}>Casual</h1>
             <GameList 
             user={user} 
             setUser={setUser} 

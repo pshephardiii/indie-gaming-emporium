@@ -6,6 +6,7 @@ export default function AdventureIndex({ user, setUser, games, setGames, genre, 
 
     return(
         <div className={styles.adventureIndex}>
+            <h1 className={styles.title}>Adventure</h1>
             <GameList 
             user={user} 
             setUser={setUser} 

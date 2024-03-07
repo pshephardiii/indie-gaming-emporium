@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');
+
 .adventureIndex {
     height: 100%;
     width: 100%;
-    background-image: url('https://i.imgur.com/u4RLSgP.jpeg');
+    background-image: url('https://i.imgur.com/NktdDi6.jpeg');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .title {
+        color: gold;
+        font-size: 10vmin;
+        font-family: "Kaushan Script", sans-serif;
+        text-shadow: 2px 2px 2px black;
+    }
 }

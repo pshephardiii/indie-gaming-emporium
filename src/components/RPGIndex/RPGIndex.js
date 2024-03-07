@@ -6,6 +6,7 @@ export default function RPGIndex({ user, setUser, games, setGames, genre, setGen
 
     return(
         <div className={styles.RPGIndex}>
+            <h1 className={styles.title}>ROLE-PLAYING</h1>
             <GameList 
             user={user} 
             setUser={setUser} 

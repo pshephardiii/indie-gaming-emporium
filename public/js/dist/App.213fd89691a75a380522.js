@@ -27,7 +27,9 @@ function ActionIndex(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _ActionIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].actionIndex
-  }, /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _ActionIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
+  }, "Action"), /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     games: games,
@@ -64,7 +66,9 @@ function AdventureIndex(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _AdventureIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].adventureIndex
-  }, /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _AdventureIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
+  }, "Adventure"), /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     games: games,
@@ -101,7 +105,9 @@ function CasualIndex(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _CasualIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].casualIndex
-  }, /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _CasualIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
+  }, "Casual"), /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     games: games,
@@ -493,7 +499,9 @@ function HorrorIndex(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _HorrorIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].horrorIndex
-  }, /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _HorrorIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
+  }, "Horror"), /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     games: games,
@@ -927,7 +935,9 @@ function RPGIndex(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _RPGIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].RPGIndex
-  }, /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _RPGIndex_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
+  }, "ROLE-PLAYING"), /*#__PURE__*/React.createElement(_components_GameList_GameList__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     setUser: setUser,
     games: games,
@@ -2090,16 +2100,28 @@ function logOut() {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.tofFERJZ8Q6YfP9oqyjH {
   height: 100%;
   width: 100%;
   background-image: url("https://i.imgur.com/gUYScri.jpeg");
   background-size: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/ActionIndex/ActionIndex.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;AACJ","sourcesContent":[".actionIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/gUYScri.jpeg');\n    background-size: cover;\n}"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tofFERJZ8Q6YfP9oqyjH .N9bEfJKdKLVLMAYIFrl7 {
+  color: black;
+  font-size: 10vmin;
+  font-family: "Keania One", sans-serif;
+  text-shadow: 2px 2px 2px white;
+}`, "",{"version":3,"sources":["webpack://./src/components/ActionIndex/ActionIndex.module.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AAAJ;AACI;EACI,YAAA;EACA,iBAAA;EACA,qCAAA;EACA,8BAAA;AACR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');\n\n.actionIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/gUYScri.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    .title {\n        color: black;\n        font-size: 10vmin;\n        font-family: \"Keania One\", sans-serif;\n        text-shadow: 2px 2px 2px white;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"actionIndex": `tofFERJZ8Q6YfP9oqyjH`
+	"actionIndex": `tofFERJZ8Q6YfP9oqyjH`,
+	"title": `N9bEfJKdKLVLMAYIFrl7`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2123,16 +2145,28 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.pofByQIL5pY_FGneGFul {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.imgur.com/u4RLSgP.jpeg");
+  background-image: url("https://i.imgur.com/NktdDi6.jpeg");
   background-size: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/AdventureIndex/AdventureIndex.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;AACJ","sourcesContent":[".adventureIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/u4RLSgP.jpeg');\n    background-size: cover;\n}"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pofByQIL5pY_FGneGFul .zQZyQLtYRHcaZXgfAkfx {
+  color: gold;
+  font-size: 10vmin;
+  font-family: "Kaushan Script", sans-serif;
+  text-shadow: 2px 2px 2px black;
+}`, "",{"version":3,"sources":["webpack://./src/components/AdventureIndex/AdventureIndex.module.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AAAJ;AACI;EACI,WAAA;EACA,iBAAA;EACA,yCAAA;EACA,8BAAA;AACR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');\n\n.adventureIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/NktdDi6.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    .title {\n        color: gold;\n        font-size: 10vmin;\n        font-family: \"Kaushan Script\", sans-serif;\n        text-shadow: 2px 2px 2px black;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"adventureIndex": `pofByQIL5pY_FGneGFul`
+	"adventureIndex": `pofByQIL5pY_FGneGFul`,
+	"title": `zQZyQLtYRHcaZXgfAkfx`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2156,16 +2190,28 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.gCiEostlmGaOgZzL1yYl {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.imgur.com/TVRjGRi.jpeg");
+  background-image: url("https://i.imgur.com/EjtNwEz.jpeg");
   background-size: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/CasualIndex/CasualIndex.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;AACJ","sourcesContent":[".casualIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/TVRjGRi.jpeg');\n    background-size: cover;\n}"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.gCiEostlmGaOgZzL1yYl .uArHEy9_qXnjj3wpyAhg {
+  color: darkturquoise;
+  font-size: 10vmin;
+  font-family: "Fontdiner Swanky", sans-serif;
+  text-shadow: 2px 2px 2px black;
+}`, "",{"version":3,"sources":["webpack://./src/components/CasualIndex/CasualIndex.module.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AAAJ;AACI;EACI,oBAAA;EACA,iBAAA;EACA,2CAAA;EACA,8BAAA;AACR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');\n\n.casualIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/EjtNwEz.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    .title {\n        color: darkturquoise;\n        font-size: 10vmin;\n        font-family: \"Fontdiner Swanky\", sans-serif;\n        text-shadow: 2px 2px 2px black;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"casualIndex": `gCiEostlmGaOgZzL1yYl`
+	"casualIndex": `gCiEostlmGaOgZzL1yYl`,
+	"title": `uArHEy9_qXnjj3wpyAhg`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2419,15 +2465,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dwhGsGc8rAAtikB5AzXT {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 .dwhGsGc8rAAtikB5AzXT .gw4Tvx0DA9pd791BTyy0 {
   display: flex;
   justify-content: space-around;
   gap: 4vmin;
-  margin: 10rem;
+  margin: 0;
   padding: 0;
   list-style: none;
-}`, "",{"version":3,"sources":["webpack://./src/components/GameList/GameList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AACJ;AAAI;EACI,aAAA;EACA,6BAAA;EACA,UAAA;EACA,aAAA;EACA,UAAA;EACA,gBAAA;AAER","sourcesContent":[".gameList {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    .list {\n        display: flex;\n        justify-content: space-around;\n        gap: 4vmin;\n        margin: 10rem;\n        padding: 0;\n        list-style: none;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/GameList/GameList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,UAAA;AACJ;AAAI;EACI,aAAA;EACA,6BAAA;EACA,UAAA;EACA,SAAA;EACA,UAAA;EACA,gBAAA;AAER","sourcesContent":[".gameList {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0;\n    .list {\n        display: flex;\n        justify-content: space-around;\n        gap: 4vmin;\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"gameList": `dwhGsGc8rAAtikB5AzXT`,
@@ -2586,16 +2633,28 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.sVsLpNI4ZYCYSptLlkew {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.imgur.com/MKeSK9S.jpeg");
+  background-image: url("https://i.imgur.com/FR20g2h.jpeg");
   background-size: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/HorrorIndex/HorrorIndex.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;AACJ","sourcesContent":[".horrorIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/MKeSK9S.jpeg');\n    background-size: cover;\n}"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sVsLpNI4ZYCYSptLlkew .IUKGw2P8GkubIrMoEJp7 {
+  color: red;
+  font-size: 10vmin;
+  font-family: "Protest Revolution", sans-serif;
+  text-shadow: 2px 2px 2px black;
+}`, "",{"version":3,"sources":["webpack://./src/components/HorrorIndex/HorrorIndex.module.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AAAJ;AACI;EACI,UAAA;EACA,iBAAA;EACA,6CAAA;EACA,8BAAA;AACR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');\n\n.horrorIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/FR20g2h.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    .title {\n        color: red;\n        font-size: 10vmin;\n        font-family: \"Protest Revolution\", sans-serif;\n        text-shadow: 2px 2px 2px black;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"horrorIndex": `sVsLpNI4ZYCYSptLlkew`
+	"horrorIndex": `sVsLpNI4ZYCYSptLlkew`,
+	"title": `IUKGw2P8GkubIrMoEJp7`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3050,16 +3109,28 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.UUpicVBnRgDXoW09TGb6 {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.imgur.com/PnTTD1X.jpeg");
+  background-image: url("https://i.imgur.com/bwEU7YT.jpeg");
   background-size: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/RPGIndex/RPGIndex.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;AACJ","sourcesContent":[".RPGIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/PnTTD1X.jpeg');\n    background-size: cover;\n}"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.UUpicVBnRgDXoW09TGb6 .JohGjp3DDkCylRgInSpV {
+  color: rgb(255, 221, 138);
+  font-size: 10vmin;
+  font-family: "Uncial Antiqua", sans-serif;
+  text-shadow: 2px 2px 2px magenta;
+}`, "",{"version":3,"sources":["webpack://./src/components/RPGIndex/RPGIndex.module.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AAAJ;AACI;EACI,yBAAA;EACA,iBAAA;EACA,yCAAA;EACA,gCAAA;AACR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Kaushan+Script&family=Keania+One&family=Protest+Revolution&family=Uncial+Antiqua&display=swap');\n\n.RPGIndex {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/bwEU7YT.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    .title {\n        color: rgb(255,221,138);\n        font-size: 10vmin;\n        font-family: \"Uncial Antiqua\", sans-serif;\n        text-shadow: 2px 2px 2px magenta;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"RPGIndex": `UUpicVBnRgDXoW09TGb6`
+	"RPGIndex": `UUpicVBnRgDXoW09TGb6`,
+	"title": `JohGjp3DDkCylRgInSpV`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3233,8 +3304,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.luBJirBC3AbIwQNsEypk {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow-y: scroll;
 }
 .luBJirBC3AbIwQNsEypk .HXb4If_3xaEW4b91vFuW {
   font-size: 4vmin;
@@ -3248,7 +3320,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.luBJirBC3AbIwQNsEypk {
   display: flex;
   align-items: center;
   justify-content: center;
-}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACJ;AAAI;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,yCAAA;EACA,8BAAA;AAER;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    .heading {\n        font-size: 4vmin;\n        margin-left: auto;\n        margin-right: auto;\n        color: yellow;\n        font-family: \"Chelsea Market\", sans-serif;\n        text-shadow: 2px 2px 1px black;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;AAAI;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,yCAAA;EACA,8BAAA;AAER;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    overflow-y: scroll;\n    .heading {\n        font-size: 4vmin;\n        margin-left: auto;\n        margin-right: auto;\n        color: yellow;\n        font-family: \"Chelsea Market\", sans-serif;\n        text-shadow: 2px 2px 1px black;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"HomePage": `luBJirBC3AbIwQNsEypk`,
