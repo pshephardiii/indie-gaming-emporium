@@ -9,7 +9,6 @@ export function getCart() {
 
 // Add an item to the cart
 export function addGameToCart(gameId) {
-  // Just send itemId for best security (no pricing)
   return sendRequest(`${BASE_URL}/cart/games/${gameId}`, 'POST');
 }
 

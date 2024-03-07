@@ -4,7 +4,7 @@ import styles from './ShowPage.module.scss'
 import { useParams } from 'react-router-dom'
 import {useState, useEffect } from 'react'
 
-export default function ShowPage({ user, setUser }) {
+export default function ShowPage({ user, setUser, cart, setCart }) {
 
 const [game, setGame] = useState({
     name: '',
@@ -31,7 +31,7 @@ useEffect(function() {
 
     return(
         <div className={styles.ShowPage}>
-           <Game user={user} setUser={setUser} game={game}/>
+           <Game user={user} setUser={setUser} cart={cart} setCart={setCart} game={game}/>
         </div>
     )
 }

@@ -40,6 +40,7 @@ const AppRouter = () => {
 							user={user}
 							setUser={setUser}
 							cart={cart}
+							setCart={setCart}
 						/>
 						}
 					></Route>

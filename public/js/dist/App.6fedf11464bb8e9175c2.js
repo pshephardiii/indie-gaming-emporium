@@ -181,16 +181,33 @@ function DescriptionFeature(_ref) {
 /* harmony export */   "default": () => (/* binding */ Game)
 /* harmony export */ });
 /* harmony import */ var _GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../GameDescription/GameDescription */ "./src/components/GameDescription/GameDescription.js");
+/* harmony import */ var _utilities_orders_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/orders-api */ "./src/utilities/orders-api.js");
 /* harmony import */ var _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Game.module.scss */ "./src/components/Game/Game.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 function Game(_ref) {
   let {
     user,
     setUser,
+    cart,
+    setCart,
     game
   } = _ref;
+  function handleAddToOrder() {
+    return _handleAddToOrder.apply(this, arguments);
+  }
+  function _handleAddToOrder() {
+    _handleAddToOrder = _asyncToGenerator(function* () {
+      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_2__.addGameToCart(game._id);
+      setCart(updatedCart);
+      console.log(updatedCart);
+    });
+    return _handleAddToOrder.apply(this, arguments);
+  }
   return /*#__PURE__*/React.createElement("div", {
     className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].game
   }, /*#__PURE__*/React.createElement("img", {
@@ -200,7 +217,10 @@ function Game(_ref) {
     className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].name
   }, game.name), /*#__PURE__*/React.createElement("p", {
     className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].price
-  }, "$".concat(game.price)), /*#__PURE__*/React.createElement(_GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  }, "$".concat(game.price)), /*#__PURE__*/React.createElement("button", {
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].button,
+    onClick: handleAddToOrder
+  }, "Add to Cart"), /*#__PURE__*/React.createElement(_GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__["default"], {
     user: user,
     setUser: setUser,
     game: game
@@ -1506,7 +1526,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 function ShowPage(_ref) {
   let {
     user,
-    setUser
+    setUser,
+    cart,
+    setCart
   } = _ref;
   const [game, setGame] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
     name: '',
@@ -1540,6 +1562,8 @@ function ShowPage(_ref) {
   }, /*#__PURE__*/React.createElement(_components_Game_Game__WEBPACK_IMPORTED_MODULE_0__["default"], {
     user: user,
     setUser: setUser,
+    cart: cart,
+    setCart: setCart,
     game: game
   }));
 }
@@ -1616,7 +1640,8 @@ const AppRouter = () => {
         page: key,
         user: user,
         setUser: setUser,
-        cart: cart
+        cart: cart,
+        setCart: setCart
       })
     });
   }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
@@ -1771,11 +1796,12 @@ function getById(id) {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   addGameToCart: () => (/* binding */ addGameToCart),
 /* harmony export */   checkout: () => (/* binding */ checkout),
 /* harmony export */   getCart: () => (/* binding */ getCart),
 /* harmony export */   getOrderHistory: () => (/* binding */ getOrderHistory)
 /* harmony export */ });
-/* unused harmony exports addGameToCart, setGameQtyInCart */
+/* unused harmony export setGameQtyInCart */
 /* harmony import */ var _send_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-request */ "./src/utilities/send-request.js");
 
 const BASE_URL = '/api/orders';
@@ -1787,7 +1813,6 @@ function getCart() {
 
 // Add an item to the cart
 function addGameToCart(gameId) {
-  // Just send itemId for best security (no pricing)
   return (0,_send_request__WEBPACK_IMPORTED_MODULE_0__["default"])("".concat(BASE_URL, "/cart/games/").concat(gameId), 'POST');
 }
 
@@ -2663,15 +2688,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
 }
 .QpVD3qAS0nYBtoQqAYoe .sUMBkZuJ9OR9j2qXysM4 {
   width: 3rem;
-}
-.QpVD3qAS0nYBtoQqAYoe .cKVXD6ZuU4VijoXshfiC {
-  width: 4.5rem;
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,SAAA;EACA,iCAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;AACJ;AAAI;EACI,WAAA;AAER;AACI;EACI,aAAA;AACR","sourcesContent":[".NavBar {\n    padding: .5rem;\n    margin: 0;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    border-bottom: 2px solid black;\n    .icon {\n        width: 3rem;\n    }\n   \n    .logout {\n        width: 4.5rem;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,SAAA;EACA,iCAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;AACJ;AAAI;EACI,WAAA;AAER","sourcesContent":[".NavBar {\n    padding: .5rem;\n    margin: 0;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    border-bottom: 2px solid black;\n    .icon {\n        width: 3rem;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
-	"icon": `sUMBkZuJ9OR9j2qXysM4`,
-	"logout": `cKVXD6ZuU4VijoXshfiC`
+	"icon": `sUMBkZuJ9OR9j2qXysM4`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
