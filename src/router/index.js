@@ -1,14 +1,26 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import routes from './routes';
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './AppRouter.module.scss';
 import { getUser } from '../utilities/users-service';
 import AuthPage from '../pages/AuthPage/AuthPage';
 import NavBar from '../components/NavBar/NavBar'
+import * as ordersAPI from '../utilities/orders-api'
 
 
 const AppRouter = () => {
 	const [user, setUser] = useState(getUser())
+	const [cart, setCart] = useState(null)
+	const isMounted = useRef(false)
+
+	useEffect(function() {
+		async function getCart() {
+			const cart = await ordersAPI.getCart();
+			setCart(cart);
+		  }
+		  {isMounted.current && user ? getCart() : isMounted.current = true};
+	}, [])
+
 	return (
 
 		<Router>
@@ -16,7 +28,7 @@ const AppRouter = () => {
 			{
 				user ?
 			<>
-			<NavBar></NavBar>
+			<NavBar user={user} setUser={setUser}></NavBar>
 			<Routes className={styles.Routes}>
 				{routes.map(({ Component, key, path }) => (
 					<Route
@@ -27,6 +39,7 @@ const AppRouter = () => {
 							page={key} 
 							user={user}
 							setUser={setUser}
+							cart={cart}
 						/>
 						}
 					></Route>

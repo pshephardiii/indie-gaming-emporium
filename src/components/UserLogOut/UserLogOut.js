@@ -1,17 +1,21 @@
+import { useNavigate } from 'react-router-dom'
 import styles from './UserLogOut.module.scss';
 import { logOut } from '../../utilities/users-service';
 
 export default function UserLogOut({ user, setUser }) {
+
+const navigateTo = useNavigate()
+
 function handleLogOut() {
   logOut();
   setUser(null);
+  navigateTo('/')
 }
 
+
 return (
-  <div className={styles.UserLogOut}>
-    <div>{user.name}</div>
-    <div className={styles.email}>{user.email}</div>
-    <button className="btn-sm" onClick={handleLogOut}>LOG OUT</button>
+  <div>
+    <img src='https://i.imgur.com/7BJkJgc.png' className={styles.UserLogOut} title='Log Out' onClick={handleLogOut}/>
   </div>
 );
 }
