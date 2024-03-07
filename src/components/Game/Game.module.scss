@@ -8,15 +8,35 @@
     background-image: url('https://i.imgur.com/Qod4yMp.jpeg');
     background-size: 100%;
     .image{
-        max-width: 40rem;
+        width: 50vmin;
         border-radius: 10px;
+        border: 2px solid white;
     }
     .name {
         color: white;
         text-shadow: 5px 5px 5px black;
+        font-size: 5vmin;
     }
     .price {
         color: white;
         text-shadow: 5px 5px 5px black;
+        font-size: 3vmin;
+    }
+    .button {
+        font-size: 4vmin;
+        color: white;
+        background-color: red;
+        border: none;
+        box-shadow: 2px 2px 2px white;
+        margin-bottom: 2rem;
     }
 }
+
+
+
+
+
+
+
+
+

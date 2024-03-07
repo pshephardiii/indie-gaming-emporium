@@ -187,11 +187,14 @@ function DescriptionFeature(_ref) {
 /* harmony export */   "default": () => (/* binding */ Game)
 /* harmony export */ });
 /* harmony import */ var _GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../GameDescription/GameDescription */ "./src/components/GameDescription/GameDescription.js");
-/* harmony import */ var _utilities_orders_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/orders-api */ "./src/utilities/orders-api.js");
-/* harmony import */ var _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Game.module.scss */ "./src/components/Game/Game.module.scss");
+/* harmony import */ var _utilities_orders_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/orders-api */ "./src/utilities/orders-api.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Game.module.scss */ "./src/components/Game/Game.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -203,28 +206,41 @@ function Game(_ref) {
     setCart,
     game
   } = _ref;
+  const addedToCart = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+  const addBtn = document.getElementById('add-btn');
   function handleAddToOrder() {
     return _handleAddToOrder.apply(this, arguments);
   }
   function _handleAddToOrder() {
     _handleAddToOrder = _asyncToGenerator(function* () {
-      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_2__.addGameToCart(game._id);
+      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_3__.addGameToCart(game._id);
       setCart(updatedCart);
-      console.log(updatedCart);
+      addedToCart.current = !addedToCart.current;
+      if (addedToCart) {
+        addBtn.innerText = 'Added to Cart!';
+        addBtn.disabled = true;
+        addBtn.style.backgroundColor = 'gray';
+        addBtn.style.boxShadow = 'none';
+      } else {
+        addBtn.innerText = 'Add to Cart';
+        addBtn.disabled = false;
+        addBtn.styles.backgroundColor = 'red';
+      }
     });
     return _handleAddToOrder.apply(this, arguments);
   }
   return /*#__PURE__*/React.createElement("div", {
-    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].game
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].game
   }, /*#__PURE__*/React.createElement("img", {
     src: game.image,
-    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].image
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].image
   }), /*#__PURE__*/React.createElement("h1", {
-    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].name
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].name
   }, game.name), /*#__PURE__*/React.createElement("p", {
-    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].price
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].price
   }, "$".concat(game.price)), /*#__PURE__*/React.createElement("button", {
-    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].button,
+    id: "add-btn",
+    className: _Game_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].button,
     onClick: handleAddToOrder
   }, "Add to Cart"), /*#__PURE__*/React.createElement(_GameDescription_GameDescription__WEBPACK_IMPORTED_MODULE_0__["default"], {
     user: user,
@@ -2386,23 +2402,35 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.Go3JyWApfbVUoySiPUEJ {
   background-size: 100%;
 }
 .Go3JyWApfbVUoySiPUEJ .dX49Q0I4q97sDtwKTDnS {
-  max-width: 40rem;
+  width: 50vmin;
   border-radius: 10px;
+  border: 2px solid white;
 }
 .Go3JyWApfbVUoySiPUEJ .vcrVA5h0hm84MnUGuJvE {
   color: white;
   text-shadow: 5px 5px 5px black;
+  font-size: 5vmin;
 }
 .Go3JyWApfbVUoySiPUEJ .IKaanuvKG6cR6NsgcLQK {
   color: white;
   text-shadow: 5px 5px 5px black;
-}`, "",{"version":3,"sources":["webpack://./src/components/Game/Game.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,aAAA;EACA,YAAA;EACA,yDAAA;EACA,qBAAA;AACJ;AAAI;EACI,gBAAA;EACA,mBAAA;AAER;AAAI;EACI,YAAA;EACA,8BAAA;AAER;AAAI;EACI,YAAA;EACA,8BAAA;AAER","sourcesContent":[".game {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-top: 3rem;\n    height: 100vh;\n    width: 100vw;\n    background-image: url('https://i.imgur.com/Qod4yMp.jpeg');\n    background-size: 100%;\n    .image{\n        max-width: 40rem;\n        border-radius: 10px;\n    }\n    .name {\n        color: white;\n        text-shadow: 5px 5px 5px black;\n    }\n    .price {\n        color: white;\n        text-shadow: 5px 5px 5px black;\n    }\n}"],"sourceRoot":""}]);
+  font-size: 3vmin;
+}
+.Go3JyWApfbVUoySiPUEJ .R8AmM0_DjXdgTqHDK1mH {
+  font-size: 4vmin;
+  color: white;
+  background-color: red;
+  border: none;
+  box-shadow: 2px 2px 2px white;
+  margin-bottom: 2rem;
+}`, "",{"version":3,"sources":["webpack://./src/components/Game/Game.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,gBAAA;EACA,aAAA;EACA,YAAA;EACA,yDAAA;EACA,qBAAA;AACJ;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER;AAAI;EACI,YAAA;EACA,8BAAA;EACA,gBAAA;AAER;AAAI;EACI,YAAA;EACA,8BAAA;EACA,gBAAA;AAER;AAAI;EACI,gBAAA;EACA,YAAA;EACA,qBAAA;EACA,YAAA;EACA,6BAAA;EACA,mBAAA;AAER","sourcesContent":[".game {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-top: 3rem;\n    height: 100vh;\n    width: 100vw;\n    background-image: url('https://i.imgur.com/Qod4yMp.jpeg');\n    background-size: 100%;\n    .image{\n        width: 50vmin;\n        border-radius: 10px;\n        border: 2px solid white;\n    }\n    .name {\n        color: white;\n        text-shadow: 5px 5px 5px black;\n        font-size: 5vmin;\n    }\n    .price {\n        color: white;\n        text-shadow: 5px 5px 5px black;\n        font-size: 3vmin;\n    }\n    .button {\n        font-size: 4vmin;\n        color: white;\n        background-color: red;\n        border: none;\n        box-shadow: 2px 2px 2px white;\n        margin-bottom: 2rem;\n    }\n}\n\n\n\n\n\n\n\n\n\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"game": `Go3JyWApfbVUoySiPUEJ`,
 	"image": `dX49Q0I4q97sDtwKTDnS`,
 	"name": `vcrVA5h0hm84MnUGuJvE`,
-	"price": `IKaanuvKG6cR6NsgcLQK`
+	"price": `IKaanuvKG6cR6NsgcLQK`,
+	"button": `R8AmM0_DjXdgTqHDK1mH`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2430,10 +2458,11 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.PsBtt6rMda10XQ8FFlfC {
   width: 75vw;
   min-width: 30rem;
-  background-color: lightgray;
+  background-color: rgb(65, 64, 64);
+  color: white;
   padding: 0 3rem;
   border-radius: 10px;
-}`, "",{"version":3,"sources":["webpack://./src/components/GameDescription/GameDescription.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,gBAAA;EACA,2BAAA;EACA,eAAA;EACA,mBAAA;AACJ","sourcesContent":[".gameDescription {\n    width: 75vw;\n    min-width: 30rem;\n    background-color: lightgray;\n    padding: 0 3rem;\n    border-radius: 10px;\n    \n\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/GameDescription/GameDescription.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,gBAAA;EACA,iCAAA;EACA,YAAA;EACA,eAAA;EACA,mBAAA;AACJ","sourcesContent":[".gameDescription {\n    width: 75vw;\n    min-width: 30rem;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    padding: 0 3rem;\n    border-radius: 10px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"gameDescription": `PsBtt6rMda10XQ8FFlfC`
@@ -3473,7 +3502,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.N88P_6Hh8tsCuVBa7Ttu {
   height: 100%;
   width: 100%;
-}`, "",{"version":3,"sources":["webpack://./src/pages/ShowPage/ShowPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;AACJ","sourcesContent":[".ShowPage {\n    height: 100%;\n    width: 100%;\n\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/ShowPage/ShowPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;AACJ","sourcesContent":[".ShowPage {\n    height: 100%;\n    width: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"ShowPage": `N88P_6Hh8tsCuVBa7Ttu`
