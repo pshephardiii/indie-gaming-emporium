@@ -505,46 +505,44 @@ function HorrorIndex(_ref) {
 
 /***/ }),
 
-/***/ "./src/components/LineItem/LineItem.js":
+/***/ "./src/components/LineGame/LineGame.js":
 /*!*********************************************!*\
-  !*** ./src/components/LineItem/LineItem.js ***!
+  !*** ./src/components/LineGame/LineGame.js ***!
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ LineItem)
+/* harmony export */   "default": () => (/* binding */ LineGame)
 /* harmony export */ });
-/* harmony import */ var _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LineItem.module.scss */ "./src/components/LineItem/LineItem.module.scss");
+/* harmony import */ var _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LineGame.module.scss */ "./src/components/LineGame/LineGame.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-function LineItem(_ref) {
+function LineGame(_ref) {
   let {
-    lineItem,
+    lineGame,
     isPaid,
     handleChangeQty
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
-    className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].LineItem
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].LineGame
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex-ctr-ctr"
-  }, lineItem.item.emoji), /*#__PURE__*/React.createElement("div", {
     className: "flex-ctr-ctr flex-col"
   }, /*#__PURE__*/React.createElement("span", {
     className: "align-ctr"
-  }, lineItem.item.name), /*#__PURE__*/React.createElement("span", null, lineItem.item.price.toFixed(2))), /*#__PURE__*/React.createElement("div", {
-    className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].qty,
+  }, lineGame.game.name), /*#__PURE__*/React.createElement("span", null, lineGame.game.price.toFixed(2))), /*#__PURE__*/React.createElement("div", {
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].qty,
     style: {
       justifyContent: isPaid && 'center'
     }
   }, !isPaid && /*#__PURE__*/React.createElement("button", {
     className: "btn-xs",
-    onClick: () => handleChangeQty(lineItem.item._id, lineItem.qty - 1)
-  }, "\u2212"), /*#__PURE__*/React.createElement("span", null, lineItem.qty), !isPaid && /*#__PURE__*/React.createElement("button", {
+    onClick: () => handleChangeQty(lineGame.game._id, lineGame.qty - 1)
+  }, "\u2212"), /*#__PURE__*/React.createElement("span", null, lineGame.qty), !isPaid && /*#__PURE__*/React.createElement("button", {
     className: "btn-xs",
-    onClick: () => handleChangeQty(lineItem.item._id, lineItem.qty + 1)
+    onClick: () => handleChangeQty(lineGame.game._id, lineGame.qty + 1)
   }, "+")), /*#__PURE__*/React.createElement("div", {
-    className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].extPrice
-  }, "$", lineItem.extPrice.toFixed(2)));
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].extPrice
+  }, "$", lineGame.extPrice.toFixed(2)));
 }
 
 /***/ }),
@@ -742,11 +740,13 @@ const NavBar = _ref => {
     src: "https://i.imgur.com/uqyjlgC.png",
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
     title: "Order History"
-  }), /*#__PURE__*/React.createElement("img", {
+  }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    to: "/cart"
+  }, /*#__PURE__*/React.createElement("img", {
     src: "https://i.imgur.com/Onph2hh.png",
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
     title: "Cart"
-  }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+  })), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/"
   }, /*#__PURE__*/React.createElement("img", {
     src: "https://i.imgur.com/ZBs7rFQ.png",
@@ -771,7 +771,7 @@ const NavBar = _ref => {
 /* harmony export */   "default": () => (/* binding */ OrderDetail)
 /* harmony export */ });
 /* harmony import */ var _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./OrderDetail.module.scss */ "./src/components/OrderDetail/OrderDetail.module.scss");
-/* harmony import */ var _LineItem_LineItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../LineItem/LineItem */ "./src/components/LineItem/LineItem.js");
+/* harmony import */ var _LineGame_LineGame__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../LineGame/LineGame */ "./src/components/LineGame/LineGame.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
@@ -784,11 +784,11 @@ function OrderDetail(_ref) {
     handleCheckout
   } = _ref;
   if (!order) return null;
-  const lineItems = order.lineItems.map(item => /*#__PURE__*/React.createElement(_LineItem_LineItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    lineItem: item,
+  const lineGames = order.lineGames.map(game => /*#__PURE__*/React.createElement(_LineGame_LineGame__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    lineGame: game,
     isPaid: order.isPaid,
     handleChangeQty: handleChangeQty,
-    key: item._id
+    key: game._id
   }));
   return /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].OrderDetail
@@ -797,15 +797,15 @@ function OrderDetail(_ref) {
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", null, "ORDER ", /*#__PURE__*/React.createElement("span", {
     className: "smaller"
   }, order.orderId)) : /*#__PURE__*/React.createElement("span", null, "NEW ORDER"), /*#__PURE__*/React.createElement("span", null, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
-    className: "".concat(_OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineItemContainer, " flex-ctr-ctr flex-col scroll-y")
-  }, lineItems.length ? /*#__PURE__*/React.createElement(React.Fragment, null, lineItems, /*#__PURE__*/React.createElement("section", {
+    className: "".concat(_OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineGameContainer, " flex-ctr-ctr flex-col scroll-y")
+  }, lineGames.length ? /*#__PURE__*/React.createElement(React.Fragment, null, lineGames, /*#__PURE__*/React.createElement("section", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].total
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
   }, "TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
     className: "btn-sm",
     onClick: handleCheckout,
-    disabled: !lineItems.length
+    disabled: !lineGames.length
   }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", null, order.totalQty), /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
   }, "$", order.orderTotal.toFixed(2)))) : /*#__PURE__*/React.createElement("div", {
@@ -1138,7 +1138,15 @@ function AuthPage(_ref) {
 /* harmony export */   "default": () => (/* binding */ CartPage)
 /* harmony export */ });
 /* harmony import */ var _CartPage_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CartPage.module.scss */ "./src/pages/CartPage/CartPage.module.scss");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/OrderDetail/OrderDetail */ "./src/components/OrderDetail/OrderDetail.js");
+/* harmony import */ var _utilities_orders_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/orders-api */ "./src/utilities/orders-api.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
 
 function CartPage(_ref) {
   let {
@@ -1147,11 +1155,38 @@ function CartPage(_ref) {
     cart,
     setCart
   } = _ref;
+  const navigateTo = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
+  function handleChangeQty(_x, _x2) {
+    return _handleChangeQty.apply(this, arguments);
+  }
+  function _handleChangeQty() {
+    _handleChangeQty = _asyncToGenerator(function* (gameId, newQty) {
+      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_3__.setGameQtyInCart(gameId, newQty);
+      setCart(updatedCart);
+    });
+    return _handleChangeQty.apply(this, arguments);
+  }
+  function handleCheckout() {
+    return _handleCheckout.apply(this, arguments);
+  }
+  function _handleCheckout() {
+    _handleCheckout = _asyncToGenerator(function* () {
+      yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_3__.checkout();
+      cart.lineGames = [];
+      navigateTo('/orders');
+    });
+    return _handleCheckout.apply(this, arguments);
+  }
   return /*#__PURE__*/React.createElement("div", {
     className: _CartPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].CartPage
   }, /*#__PURE__*/React.createElement("h1", {
     className: _CartPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
-  }, "CART PAGE"));
+  }, "CART PAGE"), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    user: user,
+    order: cart,
+    handleChangeQty: handleChangeQty,
+    handleCheckout: handleCheckout
+  }));
 }
 
 /***/ }),
@@ -1833,9 +1868,9 @@ function getById(id) {
 /* harmony export */   addGameToCart: () => (/* binding */ addGameToCart),
 /* harmony export */   checkout: () => (/* binding */ checkout),
 /* harmony export */   getCart: () => (/* binding */ getCart),
-/* harmony export */   getOrderHistory: () => (/* binding */ getOrderHistory)
+/* harmony export */   getOrderHistory: () => (/* binding */ getOrderHistory),
+/* harmony export */   setGameQtyInCart: () => (/* binding */ setGameQtyInCart)
 /* harmony export */ });
-/* unused harmony export setGameQtyInCart */
 /* harmony import */ var _send_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./send-request */ "./src/utilities/send-request.js");
 
 const BASE_URL = '/api/orders';
@@ -2487,9 +2522,9 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineItem/LineItem.module.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineGame/LineGame.module.scss":
 /*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineItem/LineItem.module.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineGame/LineGame.module.scss ***!
   \*********************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -2505,7 +2540,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
+___CSS_LOADER_EXPORT___.push([module.id, `LineGame {
   width: 100%;
   display: grid;
   grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
@@ -2516,32 +2551,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   font-size: 1.5vw;
 }
 
-.ZeRW57PNaWpYVsw6JlaC:last-child {
+.efKkf9pzkEPbcdwlgJBz:last-child {
   border-bottom: 0.1vmin solid var(--tan-3);
 }
 
-.ZeRW57PNaWpYVsw6JlaC .Z_MQzAiRjTlxboCrh9om {
+.efKkf9pzkEPbcdwlgJBz .gaQKddGTr16dCrKJflpv {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.3vw;
 }
 
-.ZeRW57PNaWpYVsw6JlaC .iZ6oJDRJlBAjRnxPhUy5 {
+.efKkf9pzkEPbcdwlgJBz .HFg6tMzXSDMil67LO1j3 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-size: 1.3vw;
 }
 
-.ZeRW57PNaWpYVsw6JlaC button {
+.efKkf9pzkEPbcdwlgJBz button {
   margin: 0;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,wBAAA;EACA,8BAAA;EACA,sCAAA;EACA,gBAAA;AACJ;;AAEI;EACA,yCAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":[".LineItem {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--text-light);\n    background-color: var(--white);\n    border-top: .1vmin solid var(--tan-3);\n    font-size: 1.5vw;\n    }\n    \n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--tan-3);\n    }\n    \n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineItem button {\n    margin: 0;\n    }"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LineGame/LineGame.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,wBAAA;EACA,8BAAA;EACA,sCAAA;EACA,gBAAA;AACJ;;AAEI;EACA,yCAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":["LineGame {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--text-light);\n    background-color: var(--white);\n    border-top: .1vmin solid var(--tan-3);\n    font-size: 1.5vw;\n    }\n    \n    .LineGame:last-child {\n    border-bottom: .1vmin solid var(--tan-3);\n    }\n    \n    .LineGame .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineGame .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineGame button {\n    margin: 0;\n    }"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"LineItem": `ZeRW57PNaWpYVsw6JlaC`,
-	"qty": `Z_MQzAiRjTlxboCrh9om`,
-	"extPrice": `iZ6oJDRJlBAjRnxPhUy5`
+	"LineGame": `efKkf9pzkEPbcdwlgJBz`,
+	"qty": `gaQKddGTr16dCrKJflpv`,
+	"extPrice": `HFg6tMzXSDMil67LO1j3`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2722,7 +2757,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
 }
 .QpVD3qAS0nYBtoQqAYoe .sUMBkZuJ9OR9j2qXysM4 {
   width: 3rem;
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,SAAA;EACA,iCAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;AACJ;AAAI;EACI,WAAA;AAER","sourcesContent":[".NavBar {\n    padding: .5rem;\n    margin: 0;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    border-bottom: 2px solid black;\n    .icon {\n        width: 3rem;\n    }\n}"],"sourceRoot":""}]);
+}
+.QpVD3qAS0nYBtoQqAYoe .sUMBkZuJ9OR9j2qXysM4:hover {
+  cursor: pointer;
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,SAAA;EACA,iCAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;AACJ;AAAI;EACI,WAAA;AAER;AAAI;EACI,eAAA;AAER","sourcesContent":[".NavBar {\n    padding: .5rem;\n    margin: 0;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    border-bottom: 2px solid black;\n    .icon {\n        width: 3rem;\n    }\n    .icon:hover {\n        cursor: pointer;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
@@ -3939,9 +3977,9 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/components/LineItem/LineItem.module.scss":
+/***/ "./src/components/LineGame/LineGame.module.scss":
 /*!******************************************************!*\
-  !*** ./src/components/LineItem/LineItem.module.scss ***!
+  !*** ./src/components/LineGame/LineGame.module.scss ***!
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3960,7 +3998,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineItem_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./LineItem.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineItem/LineItem.module.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineGame_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./LineGame.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/LineGame/LineGame.module.scss");
 
       
       
@@ -3982,12 +4020,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineItem_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineGame_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineItem_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineItem_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineItem_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineGame_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineGame_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_LineGame_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),

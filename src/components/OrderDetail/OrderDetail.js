@@ -1,16 +1,16 @@
 import styles from './OrderDetail.module.scss';
-import LineItem from '../LineItem/LineItem';
+import LineGame from '../LineGame/LineGame';
 
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
     if (!order) return null;
 
-    const lineItems = order.lineItems.map(item =>
-      <LineItem
-        lineItem={item}
+    const lineGames = order.lineGames.map(game =>
+      <LineGame
+        lineGame={game}
         isPaid={order.isPaid}
         handleChangeQty={handleChangeQty}
-        key={item._id}
+        key={game._id}
       />
     );
 
@@ -24,10 +24,10 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           }
           <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
-        <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}>
-          {lineItems.length ?
+        <div className={`${styles.lineGameContainer} flex-ctr-ctr flex-col scroll-y`}>
+          {lineGames.length ?
             <>
-              {lineItems}
+              {lineGames}
               <section className={styles.total}>
                 {order.isPaid ?
                   <span className={styles.right}>TOTAL&nbsp;&nbsp;</span>
@@ -35,7 +35,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                   <button
                     className="btn-sm"
                     onClick={handleCheckout}
-                    disabled={!lineItems.length}
+                    disabled={!lineGames.length}
                   >CHECKOUT</button>
                 }
                 <span>{order.totalQty}</span>
