@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
     height: 100vh;
     width: 100vw;
     background-image: url('https://i.imgur.com/Qod4yMp.jpeg');
@@ -9,5 +10,13 @@
     .image{
         max-width: 40rem;
         border-radius: 10px;
+    }
+    .name {
+        color: white;
+        text-shadow: 5px 5px 5px black;
+    }
+    .price {
+        color: white;
+        text-shadow: 5px 5px 5px black;
     }
 }

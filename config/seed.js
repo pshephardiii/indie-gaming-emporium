@@ -9,11 +9,11 @@ const Game = require('../models/game');
 
   await Genre.deleteMany({});
   const genres = await Genre.create([
-    {name: 'adventure', sortOrder: 10},
-    {name: 'action', sortOrder: 20},
-    {name: 'rpg', sortOrder: 30},
-    {name: 'horror', sortOrder: 40},
-    {name: 'casual', sortOrder: 50}
+    {name: 'adventure', image: 'https://i.imgur.com/WF1VZPE.png', sortOrder: 10},
+    {name: 'action', image: 'https://i.imgur.com/AXrk37U.png', sortOrder: 20},
+    {name: 'rpg', image: 'https://i.imgur.com/lRkTGTk.png', sortOrder: 30},
+    {name: 'horror', image: 'https://i.imgur.com/bWhhRwU.png', sortOrder: 40},
+    {name: 'casual', image: 'https://i.imgur.com/vsArbBU.png', sortOrder: 50}
   ]);
 
   await GameDescription.deleteMany({});

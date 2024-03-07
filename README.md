@@ -1,68 +1,53 @@
-# Big Poppa Code React Starter Kit
-This Starter Kit is being created for New Web Developers that want to get started with react
+# Paul's Indie Gaming Emporium
 
-Most people use a CLI Tool like Vue-Cli or Create React App and no idea what these things are doing
+## Description:
 
-The goal of this is for it to be a tool that let's you learn JS at a new level because you have access to
-everything under the hood and no opinionated set up
+A full-stack react app that's set up for game browsing and purchases. Includes cart and checkout functionality, user authentication and authorization, as well as complete styling. Fifteen (totally made up!) games have been seeded in with the relevant genres, descriptions, and images.
 
-I will base all my tutorials on this Starter Kit.
+## User Stories:
 
-# Who Am I?
++ "As a user, I want to be able to easily navigate around the site and browse the available games by genre."
 
-![arthurbernierjr.com](http://progressandfortune.com/smac_images/profile.jpg)
++ "As a user, I want to be able to add games to the cart directly from the page display, but I also want to be able to edit the cart details on a page made solely for that purpose."
 
-I am Arthur Bernier Jr. I work as freelance fullstack web developer and attraction marketing consultant specializing in supporting e-commerce brands,
-subscription box sites, social activists, religious/non-profit leaders and creative entrepreneurs(i.e. barbers, artists, musicians, stylists, models and photographers).
-I have a passion for helping entrepreneurs reach their perfect audience and helping you communicate to that audience in a way that makes them know, like and trust you. I also am a Full-Time Instructor at General Assembly as well as a Software Engineer at Blavity Inc.
++ "As a user, I want to be able to log in and out easily."
+
++ "As a user, I want to have access to an in depth description of each game as well as the price and artwork."
+
++ "As a user, I want the styling to remind me that I'm in an indie gaming commerce space."
+
+## App Installation Instructions:
+
+**Global installations needed: node.js mongodb**
+
++ Install Gulp Globally with ```npmi -g gulp-cli```
+
++ Start the dev server with ```npm run dev```
+
++ Deploy for production with ```npm start```
+
+## Route Explanations
+
+### Users and other Models
+
+The routes for users include POST routes to allow a user to either sign up or log in and a GET route that checks the JSON web token.
+
+The routes for games, genres, and game descriptions are all GET resquests that gain access to either a specific component or an index of them.
+
+### Orders
+
+The routes for orders include two GET requests for checking the current state of the cart and the history and POST requests that add items to the cart, set the quantity of items in the cart, and user checkout.
+
+## App Structure
+
+The app has six pages that extend directly from the index, including the Home Page, the Authentication Page, the Index Page, the Show Page, the Order History Page, and the Cart Page.  
+
+The genre list and genre list item components flow down from the Home Page.
+
+The various game genre index components (like Adventure Index) flow down from the Index Page, as well as the game list and game list item components.
+
+The game and game description components flow down from the Show Page.
 
 
-# My Favorite Online Instructors
 
-[__Colt Steele__](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)
 
-[__Brad Traversy__](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
-
-[__Jose Santos Garcia__](https://www.youtube.com/channel/UC46wWUso9H5KPQcoL9iE3Ug)
-
-[__Stephen Grider__](https://www.youtube.com/channel/UCQCaS3atWyNHEy5PkDXdpNg/)
-
-## Steps
-
-**Install Gulp Globally**
-```bash
-npm i -g gulp-cli
-```
-
-**Start the dev server**
-```bash
-npm run dev
-```
-### or
-```bash
-yarn dev
-```
-
-**Start the dev server with proxy**
-```bash
-npm run proxy
-```
-
-**Build files for production**
-```bash
-yarn build
-```
-### or
-
-```bash
-npm run build
-```
-
-**Deploy for production script**
-```bash
-npm start
-```
-### or
-```bash
-yarn start
-```

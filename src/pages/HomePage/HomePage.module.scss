@@ -3,4 +3,18 @@
     width: 100%;
     background-image: url('https://i.imgur.com/GZAmRtb.jpeg');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+        text-align: center;
+        font-size: 5vw;
+        padding: 0;
+    }
+    .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

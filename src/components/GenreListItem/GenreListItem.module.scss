@@ -1,0 +1,9 @@
+.GenreListItem {
+    list-style-type: none;
+    width: 25vw;
+    border-radius: 10px;
+    box-shadow: 5px 5px 4px black;
+}
+.GenreListItem:hover {
+    box-shadow: 10px 10px 10px  gold;
+}

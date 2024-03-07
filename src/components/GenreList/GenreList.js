@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as genresAPI from '../../utilities/genres-api'
 import GenreListItem from '../GenreListItem/GenreListItem'
+import styles from './GenreList.module.scss'
 
 export default function GenreList({ user, setUser }) {
 
@@ -24,7 +25,7 @@ export default function GenreList({ user, setUser }) {
         >{gen.name}</GenreListItem></li>)
 
     return(
-        <ul>
+        <ul className={styles.GenreList}>
             {genreList}
         </ul>
     )

@@ -4,8 +4,10 @@
     justify-content: center;
     .list {
         display: flex;
-        justify-content: space-between;
-        margin-top: 10rem;
+        justify-content: space-around;
+        gap: 4vmin;
+        margin: 10rem;
+        padding: 0;
         list-style: none;
     }
 }

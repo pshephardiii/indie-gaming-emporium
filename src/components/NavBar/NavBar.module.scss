@@ -1,0 +1,17 @@
+.NavBar {
+    padding: .5rem;
+    margin: 0;
+    background-color: rgb(65, 64, 64);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+    .icon {
+        width: 3rem;
+    }
+   
+    .logout {
+        width: 4.5rem;
+    }
+}
