@@ -759,9 +759,15 @@ const NavBar = _ref => {
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
     title: "Cart"
   })), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "/"
+    to: "/games/65e8edea6ad1b747f02be0ef"
   }, /*#__PURE__*/React.createElement("img", {
     src: "https://i.imgur.com/ZBs7rFQ.png",
+    className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
+    title: "Paul's Pick"
+  })), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    to: "/"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "https://i.imgur.com/NsVTVML.png",
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
     title: "Home"
   })), /*#__PURE__*/React.createElement(_UserLogOut_UserLogOut__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1243,7 +1249,9 @@ function HomePage(_ref) {
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _HomePage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].HomePage
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _HomePage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heading
+  }, "Paul's Indie Gaming Emporium!"), /*#__PURE__*/React.createElement("div", {
     className: _HomePage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].list
   }, /*#__PURE__*/React.createElement(_components_GenreList_GenreList__WEBPACK_IMPORTED_MODULE_0__["default"], {
     user: user,
@@ -3228,20 +3236,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.luBJirBC3AbIwQNsEypk {
   justify-content: center;
   align-items: center;
 }
-.luBJirBC3AbIwQNsEypk .qIs7e7_Y_JM_bcw9U8L1 {
-  text-align: center;
-  font-size: 5vw;
-  padding: 0;
+.luBJirBC3AbIwQNsEypk .HXb4If_3xaEW4b91vFuW {
+  font-size: 4vmin;
+  margin-left: auto;
+  margin-right: auto;
+  color: yellow;
+  font-family: "Chelsea Market", sans-serif;
+  text-shadow: 2px 2px 1px black;
 }
 .luBJirBC3AbIwQNsEypk .qTbMo2EBtJKSd5m97WwA {
   display: flex;
   align-items: center;
   justify-content: center;
-}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACJ;AAAI;EACI,kBAAA;EACA,cAAA;EACA,UAAA;AAER;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    .title {\n        text-align: center;\n        font-size: 5vw;\n        padding: 0;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACJ;AAAI;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,yCAAA;EACA,8BAAA;AAER;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    .heading {\n        font-size: 4vmin;\n        margin-left: auto;\n        margin-right: auto;\n        color: yellow;\n        font-family: \"Chelsea Market\", sans-serif;\n        text-shadow: 2px 2px 1px black;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"HomePage": `luBJirBC3AbIwQNsEypk`,
-	"title": `qIs7e7_Y_JM_bcw9U8L1`,
+	"heading": `HXb4If_3xaEW4b91vFuW`,
 	"list": `qTbMo2EBtJKSd5m97WwA`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
