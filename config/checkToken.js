@@ -1,10 +1,3 @@
-// Hey i have a token in the header
-
-// I need to verify if thi stoken is valid
-
-// If its valid i need to set the loggedin user for 
-// req, res cycle
-
 const jwt = require('jsonwebtoken')
 
 module.exports = (req, res, next) => {

@@ -12,11 +12,7 @@ const dataController = {
     try {
       const user = await User.create(req.body)
       console.log(req.body)
-      // token will be a string
       const token = createJWT(user)
-      // send back the token as a string
-      // which we need to account for
-      // in the client
       res.locals.data.user = user
       res.locals.data.token = token
       next()
@@ -56,7 +52,6 @@ module.exports = {
 
 function createJWT (user) {
   return jwt.sign(
-    // data payload
     {  user },
     process.env.SECRET,
     { expiresIn: '24h' }

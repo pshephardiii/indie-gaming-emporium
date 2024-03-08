@@ -13,16 +13,13 @@ app.use(express.static('public'))
 app.use(require('./config/checkToken'));
 app.use(morgan('combined'))
 
-// Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
-// Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/games', ensureLoggedIn, require('./routes/api/games'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 app.use('/api/genres', ensureLoggedIn, require('./routes/api/genres'));
 app.use('/api/descriptions', ensureLoggedIn, require('./routes/api/gameDescriptions'));
 
-// for react router
 app.get('*', (req, res) => {
 	res.sendFile(path.resolve(path.join(__dirname, 'public', 'index.html')))
 })

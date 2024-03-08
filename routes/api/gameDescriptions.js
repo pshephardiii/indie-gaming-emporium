@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const gameDescriptionsCtrl = require('../../controllers/api/gameDescriptions');
+const express = require('express')
+const router = express.Router()
+const gameDescriptionsCtrl = require('../../controllers/api/gameDescriptions')
 
-router.get('/:id', gameDescriptionsCtrl.show);
+router.get('/:id', gameDescriptionsCtrl.show)
 
-module.exports = router;
+module.exports = router

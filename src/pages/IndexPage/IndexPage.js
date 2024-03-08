@@ -9,7 +9,6 @@ import HorrorIndex from '../../components/HorrorIndex/HorrorIndex'
 import RPGIndex from '../../components/RPGIndex/RPGIndex'
 import styles from './IndexPage.module.scss'
 
-
 export default function IndexPage({ user, setUser }){
 
     const [games, setGames] = useState([])

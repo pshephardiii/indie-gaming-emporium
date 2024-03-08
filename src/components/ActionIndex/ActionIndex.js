@@ -1,5 +1,5 @@
-import styles from './ActionIndex.module.scss'
 import GameList from '../../components/GameList/GameList'
+import styles from './ActionIndex.module.scss'
 
 
 export default function ActionIndex({ user, setUser, games, setGames, genre, setGenre }){

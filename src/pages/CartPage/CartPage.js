@@ -1,7 +1,7 @@
-import styles from './CartPage.module.scss'
 import { useNavigate } from 'react-router-dom'
-import OrderDetail from '../../components/OrderDetail/OrderDetail'
 import * as ordersAPI from '../../utilities/orders-api'
+import OrderDetail from '../../components/OrderDetail/OrderDetail'
+import styles from './CartPage.module.scss'
 
 export default function CartPage({ user, setUser, cart, setCart }) {
 
@@ -13,9 +13,9 @@ export default function CartPage({ user, setUser, cart, setCart }) {
     }
 
     async function handleCheckout() {
-        await ordersAPI.checkout();
+        await ordersAPI.checkout()
         cart.lineGames = []
-        navigateTo('/orders');
+        navigateTo('/orders')
     }
 
     return(
@@ -27,6 +27,5 @@ export default function CartPage({ user, setUser, cart, setCart }) {
                 handleCheckout={handleCheckout}
             />
         </div>
-
     )
 }

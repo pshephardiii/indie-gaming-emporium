@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import styles from './AuthPage.module.scss';
-import LoginForm from '../../components/LoginForm/LoginForm';
-import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import Logo from '../../components/Logo/Logo';
+import { useState } from 'react'
+import LoginForm from '../../components/LoginForm/LoginForm'
+import SignUpForm from '../../components/SignUpForm/SignUpForm'
+import styles from './AuthPage.module.scss'
 
 export default function AuthPage({ setUser }) {
-  const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(true)
 
   return (
     <main className={styles.AuthPage}>
@@ -15,5 +14,5 @@ export default function AuthPage({ setUser }) {
       </div>
       {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
     </main>
-  );
+  )
 }

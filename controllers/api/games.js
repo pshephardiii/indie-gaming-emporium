@@ -1,4 +1,4 @@
-const Game = require('../../models/game');
+const Game = require('../../models/game')
 
 module.exports = {
   indexByGenre,
@@ -8,7 +8,6 @@ module.exports = {
 async function indexByGenre(req, res) {
   try{
     const games = await Game.find({ genre: req.params.genreId }).sort('name').populate('genre').exec();
-    // re-sort based upon the sortOrder of the categories
     games.sort((a, b) => a.genre.sortOrder - b.genre.sortOrder);
     res.status(200).json(games);
   }catch(e){

@@ -10,7 +10,6 @@ class Test {
     };
   }
 }
-// test
 const test = new Test();
 test.main();
 /******/ })()

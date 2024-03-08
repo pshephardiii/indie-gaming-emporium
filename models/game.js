@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-require('./genre');
+require('./genre')
 
-const gameSchema = require('./gameSchema');
+const gameSchema = require('./gameSchema')
 
-module.exports = mongoose.model('Game', gameSchema);
+module.exports = mongoose.model('Game', gameSchema)

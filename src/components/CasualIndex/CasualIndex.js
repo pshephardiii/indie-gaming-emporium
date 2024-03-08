@@ -1,6 +1,5 @@
-import styles from './CasualIndex.module.scss'
 import GameList from '../../components/GameList/GameList'
-
+import styles from './CasualIndex.module.scss'
 
 export default function CasualIndex({ user, setUser, games, setGames, genre, setGenre }){
 

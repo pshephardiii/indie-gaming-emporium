@@ -1,6 +1,5 @@
-import styles from './AdventureIndex.module.scss'
 import GameList from '../../components/GameList/GameList'
-
+import styles from './AdventureIndex.module.scss'
 
 export default function AdventureIndex({ user, setUser, games, setGames, genre, setGenre }){
 

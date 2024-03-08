@@ -1,6 +1,5 @@
-import styles from './HorrorIndex.module.scss'
 import GameList from '../../components/GameList/GameList'
-
+import styles from './HorrorIndex.module.scss'
 
 export default function HorrorIndex({ user, setUser, games, setGames, genre, setGenre }){
 

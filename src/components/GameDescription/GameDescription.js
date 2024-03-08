@@ -43,8 +43,6 @@ export default function GameDescription({ user, setUser, game }) {
         } else(isMounted.current = true)
     },[gameDescription])
 
-   
-
     return(
         <div className={styles.gameDescription}>
             <h3>{description.opening}</h3>

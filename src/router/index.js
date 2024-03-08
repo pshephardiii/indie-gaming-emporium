@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import routes from './routes';
 import { useState, useEffect, useRef } from 'react'
-import styles from './AppRouter.module.scss';
+import * as ordersAPI from '../utilities/orders-api'
 import { getUser } from '../utilities/users-service';
+import routes from './routes';
 import AuthPage from '../pages/AuthPage/AuthPage';
 import NavBar from '../components/NavBar/NavBar'
-import * as ordersAPI from '../utilities/orders-api'
-
+import styles from './AppRouter.module.scss';
 
 const AppRouter = () => {
 	const [user, setUser] = useState(getUser())

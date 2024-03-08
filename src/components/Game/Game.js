@@ -1,6 +1,6 @@
-import GameDescription from '../GameDescription/GameDescription'
-import * as ordersAPI from '../../utilities/orders-api'
 import { useRef } from 'react'
+import * as ordersAPI from '../../utilities/orders-api'
+import GameDescription from '../GameDescription/GameDescription'
 import styles from './Game.module.scss'
 
 

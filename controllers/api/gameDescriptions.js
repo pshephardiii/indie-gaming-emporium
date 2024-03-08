@@ -1,4 +1,4 @@
-const GameDescription = require('../../models/gameDescription');
+const GameDescription = require('../../models/gameDescription')
 
 module.exports = {
   show

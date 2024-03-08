@@ -7,11 +7,10 @@ export default function HomePage({ user, setUser }) {
         <div className={styles.HomePage}>
             <h1 className={styles.heading}>Paul's Indie Gaming Emporium!</h1>
             <div className={styles.list}>
-            <GenreList
-            user={user}
-            setUser={setUser}/>
+                <GenreList
+                user={user}
+                setUser={setUser}/>
             </div>
         </div>
-
     )
 }

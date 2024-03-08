@@ -1,9 +1,9 @@
-require('dotenv').config();
-require('./database');
+require('dotenv').config()
+require('./database')
 
-const Genre = require('../models/genre');
+const Genre = require('../models/genre')
 const GameDescription = require('../models/gameDescription')
-const Game = require('../models/game');
+const Game = require('../models/game')
 
 (async function() {
 
@@ -218,7 +218,6 @@ const Game = require('../models/game');
       closing: `Bubble Buddy is not just a game; it's a delightful celebration of companionship, laughter, and the simple joys of friendship. Join your Bubble Buddy on a carefree journey, and let the bubbles of joy and happiness surround you in this charming casual game.`
     }
   ])
-
 
   await Game.deleteMany({});
   const games = await Game.create([

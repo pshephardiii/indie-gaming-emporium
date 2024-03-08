@@ -1,6 +1,5 @@
-import styles from './RPGIndex.module.scss'
 import GameList from '../../components/GameList/GameList'
-
+import styles from './RPGIndex.module.scss'
 
 export default function RPGIndex({ user, setUser, games, setGames, genre, setGenre }){
 

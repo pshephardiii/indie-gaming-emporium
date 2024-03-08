@@ -1,32 +1,27 @@
-import styles from './OrderHistoryPage.module.scss';
-import { useState, useEffect } from 'react';
-import * as ordersAPI from '../../utilities/orders-api';
-import OrderList from '../../components/OrderList/OrderList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import { useState, useEffect } from 'react'
+import * as ordersAPI from '../../utilities/orders-api'
+import OrderList from '../../components/OrderList/OrderList'
+import OrderDetail from '../../components/OrderDetail/OrderDetail'
+import styles from './OrderHistoryPage.module.scss'
 
 export default function OrderHistoryPage({ user, setUser }) {
-  /*--- State --- */
+
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
 
-  /*--- Side Effects --- */
   useEffect(function () {
-    // Load previous orders (paid)
     async function fetchOrderHistory() {
-      const orders = await ordersAPI.getOrderHistory();
-      setOrders(orders);
-      // If no orders, activeOrder will be set to null below
-      setActiveOrder(orders[0] || null);
+      const orders = await ordersAPI.getOrderHistory()
+      setOrders(orders)
+      setActiveOrder(orders[0] || null)
     }
-    fetchOrderHistory();
-  }, []);
+    fetchOrderHistory()
+  }, [])
 
-  /*--- Event Handlers --- */
   function handleSelectOrder(order) {
-    setActiveOrder(order);
+    setActiveOrder(order)
   }
 
-  /*--- Rendered UI --- */
   return (
     <main className={styles.OrderHistoryPage}>
       <OrderList
@@ -38,5 +33,5 @@ export default function OrderHistoryPage({ user, setUser }) {
         order={activeOrder}
       />
     </main>
-  );
+  )
 }

@@ -1,6 +1,5 @@
-const game = require('./game');
 const mongoose = require('mongoose')
-const Schema = require('mongoose').Schema;
+const Schema = require('mongoose').Schema
 
 const gameDescription = new Schema({
   opening: { type: String, required: true },
@@ -9,6 +8,6 @@ const gameDescription = new Schema({
   closing: { type: String, required: true }
 }, {
   timestamps: true
-});
+})
 
-module.exports = mongoose.model('GameDescription', gameDescription);
+module.exports = mongoose.model('GameDescription', gameDescription)
