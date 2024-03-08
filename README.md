@@ -26,28 +26,74 @@ A full-stack react app that's set up for game browsing and purchases. Includes c
 
 + Deploy for production with ```npm start```
 
+## Model Attributions Diagram
+
+![Model Attributions Diagram](https://i.imgur.com/U6J4IQ3.png)
+
 ## Route Explanations
 
 ### Users and other Models
 
 The routes for users include POST routes to allow a user to either sign up or log in and a GET route that checks the JSON web token.
 
+Sign up (POST): ```/api/users/```
+
+Log in (POST): ```api/users/login```
+
+Check Token (GET): ```api/users/check-token```
+
 The routes for games, genres, and game descriptions are all GET resquests that gain access to either a specific component or an index of them.
+
+Index games by genre (GET): ```api/games/genre/:genreId```
+
+Show game (GET): ```api/games/:id```
+
+Index all genres (GET): ```api/genres/```
+
+Show index (GET): ```api/genres/genreId```
+
+Show game description (GET): ```api/descriptions/:id```
 
 ### Orders
 
 The routes for orders include two GET requests for checking the current state of the cart and the history and POST requests that add items to the cart, set the quantity of items in the cart, and user checkout.
 
-## App Structure
+Get cart (GET): ```/api/orders/cart```
 
-The app has six pages that extend directly from the index, including the Home Page, the Authentication Page, the Index Page, the Show Page, the Order History Page, and the Cart Page.  
+Get order history (GET): ```/api/orders/history```
 
-The genre list and genre list item components flow down from the Home Page.
+Add to cart (POST): ```/api/orders/cart/:id```
 
-The various game genre index components (like Adventure Index) flow down from the Index Page, as well as the game list and game list item components.
+Checkout (POST): ```/api/orders/cart/checkout```
 
-The game and game description components flow down from the Show Page.
+Set game quantity in cart (PUT): ```/api/orders/cart/qty```
 
+## Frontend App Structure 
 
+### Data Flow Diagram
 
+![Data Flow Diagram](https://i.imgur.com/JFDpO8c.png)
 
+The data flows from the router index in the direction of the arrows.
+
+### Frontend Navigation Diagram
+
+![Navigation Diagram](https://i.imgur.com/gvgL88y.png)
+
+The dotted arrows represent navigation links from one component/page to another.
+
+## Application Screenshots
+
+### Home Page
+
+![Home Page Screenshot](https://i.imgur.com/Rkxr0eG.png)
+
+### Index Page - Adventure
+
+![Index Page - Adventure](https://i.imgur.com/9TBXjdC.png)
+
+### Show Page - Oblivion Rainbow
+
+![Show Page - Oblivion Rainbow](https://i.imgur.com/STuvecG.png)
+
+**NOTE**: the Show Page screenshot crops out the Navigation Bar that is above the game art and a majority of the game description below the "Add to Cart" button.
