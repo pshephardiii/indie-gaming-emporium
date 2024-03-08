@@ -552,17 +552,21 @@ function LineGame(_ref) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex-ctr-ctr flex-col"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "align-ctr"
-  }, lineGame.game.name), /*#__PURE__*/React.createElement("span", null, lineGame.game.price.toFixed(2))), /*#__PURE__*/React.createElement("div", {
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineGameName
+  }, lineGame.game.name), /*#__PURE__*/React.createElement("span", {
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineGamePrice
+  }, lineGame.game.price.toFixed(2))), /*#__PURE__*/React.createElement("div", {
     className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].qty,
     style: {
       justifyContent: isPaid && 'center'
     }
   }, !isPaid && /*#__PURE__*/React.createElement("button", {
-    className: "btn-xs",
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button,
     onClick: () => handleChangeQty(lineGame.game._id, lineGame.qty - 1)
-  }, "\u2212"), /*#__PURE__*/React.createElement("span", null, lineGame.qty), !isPaid && /*#__PURE__*/React.createElement("button", {
-    className: "btn-xs",
+  }, "\u2212"), /*#__PURE__*/React.createElement("span", {
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].currentQty
+  }, lineGame.qty), !isPaid && /*#__PURE__*/React.createElement("button", {
+    className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button,
     onClick: () => handleChangeQty(lineGame.game._id, lineGame.qty + 1)
   }, "+")), /*#__PURE__*/React.createElement("div", {
     className: _LineGame_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].extPrice
@@ -838,17 +842,21 @@ function OrderDetail(_ref) {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].sectionHeading
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", null, "ORDER ", /*#__PURE__*/React.createElement("span", {
     className: "smaller"
-  }, order.orderId)) : /*#__PURE__*/React.createElement("span", null, "NEW ORDER"), /*#__PURE__*/React.createElement("span", null, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
+  }, order.orderId)) : /*#__PURE__*/React.createElement("span", null, "NEW ORDER"), /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].orderDate
+  }, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
     className: "".concat(_OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineGameContainer, " flex-ctr-ctr flex-col scroll-y")
   }, lineGames.length ? /*#__PURE__*/React.createElement(React.Fragment, null, lineGames, /*#__PURE__*/React.createElement("section", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].total
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
   }, "TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
-    className: "btn-sm",
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button,
     onClick: handleCheckout,
     disabled: !lineGames.length
-  }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", null, order.totalQty), /*#__PURE__*/React.createElement("span", {
+  }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalQty
+  }, "".concat(order.totalQty, " items")), /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
   }, "$", order.orderTotal.toFixed(2)))) : /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].message
@@ -1242,9 +1250,7 @@ function CartPage(_ref) {
   }
   return /*#__PURE__*/React.createElement("div", {
     className: _CartPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].CartPage
-  }, /*#__PURE__*/React.createElement("h1", {
-    className: _CartPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].title
-  }, "CART PAGE"), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: user,
     order: cart,
     handleChangeQty: handleChangeQty,
@@ -2708,43 +2714,55 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `LineGame {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
-  padding: 1vmin 0;
-  color: var(--text-light);
-  background-color: var(--white);
-  border-top: 0.1vmin solid var(--tan-3);
-  font-size: 1.5vw;
+___CSS_LOADER_EXPORT___.push([module.id, `.efKkf9pzkEPbcdwlgJBz {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  gap: 1rem;
+  border-bottom: 1px solid pink;
 }
-
-.efKkf9pzkEPbcdwlgJBz:last-child {
+.efKkf9pzkEPbcdwlgJBz .efKkf9pzkEPbcdwlgJBz:last-child {
   border-bottom: 0.1vmin solid var(--tan-3);
 }
-
+.efKkf9pzkEPbcdwlgJBz .UcikO_CqFcARKDTAJUzd {
+  color: yellow;
+  text-shadow: 2px 2px 2px black;
+}
+.efKkf9pzkEPbcdwlgJBz .SdEPtntWPAbiIXuBpYBC {
+  margin-top: 1rem;
+}
 .efKkf9pzkEPbcdwlgJBz .gaQKddGTr16dCrKJflpv {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.25rem;
 }
-
+.efKkf9pzkEPbcdwlgJBz .gaQKddGTr16dCrKJflpv .WVAZURX4ddcE5kHjjU0h {
+  margin: auto 1rem;
+}
 .efKkf9pzkEPbcdwlgJBz .HFg6tMzXSDMil67LO1j3 {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.25rem;
 }
-
-.efKkf9pzkEPbcdwlgJBz button {
+.efKkf9pzkEPbcdwlgJBz .aGhv4adQxdYglzM8MSrN {
   margin: 0;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineGame/LineGame.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,wBAAA;EACA,8BAAA;EACA,sCAAA;EACA,gBAAA;AACJ;;AAEI;EACA,yCAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":["LineGame {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--text-light);\n    background-color: var(--white);\n    border-top: .1vmin solid var(--tan-3);\n    font-size: 1.5vw;\n    }\n    \n    .LineGame:last-child {\n    border-bottom: .1vmin solid var(--tan-3);\n    }\n    \n    .LineGame .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineGame .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n    \n    .LineGame button {\n    margin: 0;\n    }"],"sourceRoot":""}]);
+  height: 2rem;
+  width: 2rem;
+  background-color: red;
+}`, "",{"version":3,"sources":["webpack://./src/components/LineGame/LineGame.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,sBAAA;EACA,SAAA;EACA,6BAAA;AACJ;AACI;EACI,yCAAA;AACR;AAEI;EACI,aAAA;EACA,8BAAA;AAAR;AAII;EACI,gBAAA;AAFR;AAKI;EACI,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AAHR;AAKQ;EACI,iBAAA;AAHZ;AAOI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;AALR;AAQI;EACI,SAAA;EACA,YAAA;EACA,WAAA;EACA,qBAAA;AANR","sourcesContent":[".LineGame {\n    width: 50%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding-bottom: .5rem;\n    gap: 1rem;\n    border-bottom: 1px solid pink;\n\n    .LineGame:last-child {\n        border-bottom: .1vmin solid var(--tan-3);\n    }\n\n    .lineGameName {\n        color: yellow;\n        text-shadow: 2px 2px 2px black;\n    }\n    \n    \n    .lineGamePrice {\n        margin-top: 1rem;\n    }\n\n    .qty {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        font-size: 1.25rem;\n\n        .currentQty {\n            margin: auto 1rem;\n        }\n    }\n\n    .extPrice {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        font-size: 1.25rem;\n    }\n\n    .button {\n        margin: 0;\n        height: 2rem;\n        width: 2rem;\n        background-color: red;\n    }\n}\n    \n\n    \n\n    \n\n    \n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"LineGame": `efKkf9pzkEPbcdwlgJBz`,
+	"lineGameName": `UcikO_CqFcARKDTAJUzd`,
+	"lineGamePrice": `SdEPtntWPAbiIXuBpYBC`,
 	"qty": `gaQKddGTr16dCrKJflpv`,
-	"extPrice": `HFg6tMzXSDMil67LO1j3`
+	"currentQty": `WVAZURX4ddcE5kHjjU0h`,
+	"extPrice": `HFg6tMzXSDMil67LO1j3`,
+	"button": `aGhv4adQxdYglzM8MSrN`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2956,60 +2974,87 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap);"]);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 3vmin;
-  font-size: 2vmin;
-  color: var(--text-light);
-}
-
-.cPR75kdAXDGVxib0PszB .ap70fWT3eETsAtLlRQKl {
   width: 100%;
+  padding: 3vmin;
 }
-
-.cPR75kdAXDGVxib0PszB .vVkqXbRqxMYDCnUttflb {
+.cPR75kdAXDGVxib0PszB .ap70fWT3eETsAtLlRQKl {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  font-family: "Chelsea Market", sans-serif;
+  font-size: 4vmin;
+  color: yellow;
+  text-shadow: 2px 2px 1px black;
+}
+.cPR75kdAXDGVxib0PszB .ap70fWT3eETsAtLlRQKl .b73kZ_AIC8CmOngOZegg {
+  margin-left: 1rem;
+}
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH {
   margin-top: 3vmin;
+  padding-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(64, 64, 64);
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  gap: 3rem;
   justify-content: flex-start;
   height: calc(100vh - 18vmin);
-  width: 100%;
+  width: 27rem;
 }
-
-.cPR75kdAXDGVxib0PszB .V5OAbv7QFHo6WglNx0m0 {
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 {
   width: 100%;
   display: grid;
   grid-template-columns: 18.35vw 5.75vw 5.25vw;
   padding: 1vmin 0;
-  color: var(--text-light);
-  border-top: 0.1vmin solid var(--tan-3);
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  border: 0.1vmin solid var(--tan-3);
 }
-
-.cPR75kdAXDGVxib0PszB .V5OAbv7QFHo6WglNx0m0 span {
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .zypoFNoBI8rmWRRI9Gn4 {
+  background-color: red;
+  text-shadow: 2px 2px 1px black;
+  cursor: pointer;
+}
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .p73ZrVK0TdkEr6st7NOK {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5vw;
   color: var(--text-dark);
 }
-
-.cPR75kdAXDGVxib0PszB .V5OAbv7QFHo6WglNx0m0 span.GtULiQQdndLNSQN4Yc97 {
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .p73ZrVK0TdkEr6st7NOK .GtULiQQdndLNSQN4Yc97 {
   display: flex;
   justify-content: flex-end;
 }
-
-.cPR75kdAXDGVxib0PszB .NAoveQ0xvm5VtSgh6clR {
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .NAoveQ0xvm5VtSgh6clR {
   position: absolute;
   top: 50vh;
-  font-size: 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,2BAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,wBAAA;AACJ;;AAEE;EACE,WAAA;AACJ;;AAEE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AACJ;;AAEE;EACE,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,wBAAA;EACA,sCAAA;AACJ;;AAEE;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AACJ;;AAEE;EACE,aAAA;EACA,yBAAA;AACJ;;AAEE;EACE,kBAAA;EACA,SAAA;EACA,gBAAA;AACJ","sourcesContent":[".OrderDetail {\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--text-light);\n  }\n  \n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n  \n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n  \n  .OrderDetail .total {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 18.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--text-light);\n    border-top: .1vmin solid var(--tan-3);\n  }\n  \n  .OrderDetail .total span {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--text-dark);\n  }\n  \n  .OrderDetail .total span.right {\n    display: flex;\n    justify-content: flex-end;\n  }\n  \n  .OrderDetail .message {\n    position: absolute;\n    top: 50vh;\n    font-size: 2vmin;\n  }"],"sourceRoot":""}]);
+  font-family: "Chelsea Market", sans-serif;
+  font-size: 4vmin;
+  color: yellow;
+  text-shadow: 2px 2px 1px black;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AAAJ;AAEI;EACE,aAAA;EACA,uBAAA;EACA,WAAA;EACA,mBAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AAAN;AACM;EACE,iBAAA;AACR;AAGI;EACE,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,iCAAA;EACA,YAAA;EACA,8BAAA;EACA,iBAAA;EACA,mBAAA;EACA,SAAA;EACA,2BAAA;EACA,4BAAA;EACA,YAAA;AADN;AAIM;EACE,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,YAAA;EACA,8BAAA;EACA,kCAAA;AAFR;AAKQ;EACE,qBAAA;EACA,8BAAA;EACA,eAAA;AAHV;AAMQ;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AAJV;AAMU;EACE,aAAA;EACA,yBAAA;AAJZ;AASM;EACE,kBAAA;EACA,SAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AAPR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');\n\n.OrderDetail {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding: 3vmin;\n\n    .sectionHeading {\n      display: flex;\n      justify-content: center;\n      width: 100%;\n      margin-bottom: 3rem;\n      font-family: \"Chelsea Market\", sans-serif;\n      font-size: 4vmin;\n      color: yellow;\n      text-shadow: 2px 2px 1px black;\n      .orderDate {\n        margin-left: 1rem;\n      }\n    }\n\n    .lineGameContainer {\n      margin-top: 3vmin;\n      padding-top: 2rem;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: column;\n      background-color: rgb(64, 64, 64);\n      color: white;\n      text-shadow: 2px 2px 1px black;\n      font-size: 1.5rem;\n      border-radius: 10px;\n      gap: 3rem;\n      justify-content: flex-start;\n      height: calc(100vh - 18vmin);\n      width: 27rem;\n      \n\n      .total {\n        width: 100%;\n        display: grid;\n        grid-template-columns: 18.35vw 5.75vw 5.25vw;\n        padding: 1vmin 0;\n        color: white;\n        text-shadow: 2px 2px 1px black;\n        border: .1vmin solid var(--tan-3);\n     \n\n        .button {\n          background-color: red;\n          text-shadow: 2px 2px 1px black;\n          cursor: pointer;\n        }\n\n        .span {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          font-size: 1.5vw;\n          color: var(--text-dark);\n\n          .right {\n            display: flex;\n            justify-content: flex-end;\n          }\n        }\n      }\n\n      .message {\n        position: absolute;\n        top: 50vh;\n        font-family: \"Chelsea Market\", sans-serif;\n        font-size: 4vmin;\n        color: yellow;\n        text-shadow: 2px 2px 1px black;\n      }\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
 	"sectionHeading": `ap70fWT3eETsAtLlRQKl`,
-	"lineItemContainer": `vVkqXbRqxMYDCnUttflb`,
+	"orderDate": `b73kZ_AIC8CmOngOZegg`,
+	"lineGameContainer": `w_xrohFcLzqrK66BLoMH`,
 	"total": `V5OAbv7QFHo6WglNx0m0`,
+	"button": `zypoFNoBI8rmWRRI9Gn4`,
+	"span": `p73ZrVK0TdkEr6st7NOK`,
 	"right": `GtULiQQdndLNSQN4Yc97`,
 	"message": `NAoveQ0xvm5VtSgh6clR`
 };
@@ -3296,9 +3341,13 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.L_5WS_CRB9wroI07BnBa {
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-image: url("https://i.imgur.com/GZAmRtb.jpeg");
+  background-size: cover;
   display: flex;
-}`, "",{"version":3,"sources":["webpack://./src/pages/CartPage/CartPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,uBAAA;EACA,aAAA;AACJ","sourcesContent":[".CartPage {\n    height: 100%;\n    width: 100%;\n    background-color: white;\n    display: flex;\n}"],"sourceRoot":""}]);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}`, "",{"version":3,"sources":["webpack://./src/pages/CartPage/CartPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,2BAAA;AACJ","sourcesContent":[".CartPage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: flex-start;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"CartPage": `L_5WS_CRB9wroI07BnBa`
@@ -3335,7 +3384,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.luBJirBC3AbIwQNsEypk {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: scroll;
 }
 .luBJirBC3AbIwQNsEypk .HXb4If_3xaEW4b91vFuW {
   font-size: 4vmin;
@@ -3349,7 +3397,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.luBJirBC3AbIwQNsEypk {
   display: flex;
   align-items: center;
   justify-content: center;
-}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;AAAI;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,yCAAA;EACA,8BAAA;AAER;AAAI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AAER","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    overflow-y: scroll;\n    .heading {\n        font-size: 4vmin;\n        margin-left: auto;\n        margin-right: auto;\n        color: yellow;\n        font-family: \"Chelsea Market\", sans-serif;\n        text-shadow: 2px 2px 1px black;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/HomePage/HomePage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yDAAA;EACA,sBAAA;EACA,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,mBAAA;AACJ;AACI;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,yCAAA;EACA,8BAAA;AACR;AACI;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;AACR","sourcesContent":[".HomePage {\n    height: 100%;\n    width: 100%;\n    background-image: url('https://i.imgur.com/GZAmRtb.jpeg');\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n\n    .heading {\n        font-size: 4vmin;\n        margin-left: auto;\n        margin-right: auto;\n        color: yellow;\n        font-family: \"Chelsea Market\", sans-serif;\n        text-shadow: 2px 2px 1px black;\n    }\n    .list {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"HomePage": `luBJirBC3AbIwQNsEypk`,

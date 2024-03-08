@@ -1,47 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');
+
 .OrderDetail {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 3vmin;
-    font-size: 2vmin;
-    color: var(--text-light);
-  }
-  
-  .OrderDetail .sectionHeading {
-    width: 100%
-  }
-  
-  .OrderDetail .lineItemContainer {
-    margin-top: 3vmin;
-    justify-content: flex-start;
-    height: calc(100vh - 18vmin);
-    width: 100%;
-  }
-  
-  .OrderDetail .total {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 18.35vw 5.75vw 5.25vw;
-    padding: 1vmin 0;
-    color: var(--text-light);
-    border-top: .1vmin solid var(--tan-3);
-  }
-  
-  .OrderDetail .total span {
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5vw;
-    color: var(--text-dark);
-  }
-  
-  .OrderDetail .total span.right {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .OrderDetail .message {
-    position: absolute;
-    top: 50vh;
-    font-size: 2vmin;
+    width: 100%;
+    padding: 3vmin;
+
+    .sectionHeading {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 3rem;
+      font-family: "Chelsea Market", sans-serif;
+      font-size: 4vmin;
+      color: yellow;
+      text-shadow: 2px 2px 1px black;
+      .orderDate {
+        margin-left: 1rem;
+      }
+    }
+
+    .lineGameContainer {
+      margin-top: 3vmin;
+      padding-top: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(64, 64, 64);
+      color: white;
+      text-shadow: 2px 2px 1px black;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      gap: 3rem;
+      justify-content: flex-start;
+      height: calc(100vh - 18vmin);
+      width: 27rem;
+      
+
+      .total {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 18.35vw 5.75vw 5.25vw;
+        padding: 1vmin 0;
+        color: white;
+        text-shadow: 2px 2px 1px black;
+        border: .1vmin solid var(--tan-3);
+     
+
+        .button {
+          background-color: red;
+          text-shadow: 2px 2px 1px black;
+          cursor: pointer;
+        }
+
+        .span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5vw;
+          color: var(--text-dark);
+
+          .right {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      .message {
+        position: absolute;
+        top: 50vh;
+        font-family: "Chelsea Market", sans-serif;
+        font-size: 4vmin;
+        color: yellow;
+        text-shadow: 2px 2px 1px black;
+      }
+    }
   }

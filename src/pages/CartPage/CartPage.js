@@ -16,12 +16,10 @@ export default function CartPage({ user, setUser, cart, setCart }) {
         await ordersAPI.checkout();
         cart.lineGames = []
         navigateTo('/orders');
-        
     }
 
     return(
         <div className={styles.CartPage}>
-            <h1 className={styles.title}>CART PAGE</h1>
             <OrderDetail
                 user={user}
                 order={cart}

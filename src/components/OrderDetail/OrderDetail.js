@@ -3,6 +3,7 @@ import LineGame from '../LineGame/LineGame';
 
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
+
     if (!order) return null;
 
     const lineGames = order.lineGames.map(game =>
@@ -22,7 +23,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             :
             <span>NEW ORDER</span>
           }
-          <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
+          <span className={styles.orderDate}>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
         <div className={`${styles.lineGameContainer} flex-ctr-ctr flex-col scroll-y`}>
           {lineGames.length ?
@@ -33,12 +34,12 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                   <span className={styles.right}>TOTAL&nbsp;&nbsp;</span>
                   :
                   <button
-                    className="btn-sm"
+                    className={styles.button}
                     onClick={handleCheckout}
                     disabled={!lineGames.length}
                   >CHECKOUT</button>
                 }
-                <span>{order.totalQty}</span>
+                <span className={styles.totalQty}>{`${order.totalQty} items`}</span>
                 <span className={styles.right}>${order.orderTotal.toFixed(2)}</span>
               </section>
             </>

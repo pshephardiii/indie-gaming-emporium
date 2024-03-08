@@ -1,32 +1,55 @@
-LineGame {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
-    padding: 1vmin 0;
-    color: var(--text-light);
-    background-color: var(--white);
-    border-top: .1vmin solid var(--tan-3);
-    font-size: 1.5vw;
-    }
-    
+.LineGame {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: .5rem;
+    gap: 1rem;
+    border-bottom: 1px solid pink;
+
     .LineGame:last-child {
-    border-bottom: .1vmin solid var(--tan-3);
+        border-bottom: .1vmin solid var(--tan-3);
+    }
+
+    .lineGameName {
+        color: yellow;
+        text-shadow: 2px 2px 2px black;
     }
     
-    .LineGame .qty {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.3vw;
-    }
     
-    .LineGame .extPrice {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 1.3vw;
+    .lineGamePrice {
+        margin-top: 1rem;
     }
+
+    .qty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.25rem;
+
+        .currentQty {
+            margin: auto 1rem;
+        }
+    }
+
+    .extPrice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+    }
+
+    .button {
+        margin: 0;
+        height: 2rem;
+        width: 2rem;
+        background-color: red;
+    }
+}
     
-    .LineGame button {
-    margin: 0;
-    }
+
+    
+
+    
+
+    
