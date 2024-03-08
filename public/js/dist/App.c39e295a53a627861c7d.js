@@ -733,8 +733,8 @@ function OrderDetail(_ref) {
     disabled: !lineGames.length
   }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].totalQty
-  }, "".concat(order.totalQty, " items")), /*#__PURE__*/React.createElement("span", {
-    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].right
+  }, "".concat(order.totalQty, " item(s)")), /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].totalPrice
   }, "$", order.orderTotal.toFixed(2)))) : /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].message
   }, "Cart is empty!")));
@@ -2481,12 +2481,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   gap: 3rem;
   justify-content: flex-start;
   height: calc(100vh - 18vmin);
-  width: 50vw;
+  width: 75vw;
+  max-width: 40rem;
 }
 .cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 {
   width: 100%;
-  display: grid;
-  grid-template-columns: 18.35vw 5.75vw 5.25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   padding: 1vmin 0;
   color: white;
   text-shadow: 2px 2px 1px black;
@@ -2496,6 +2499,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   background-color: red;
   text-shadow: 2px 2px 1px black;
   cursor: pointer;
+  width: 15vw;
+  height: 3rem;
+  min-width: 5rem;
+}
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .h9JmrZXsbkyHUL5udmun {
+  font-size: 1.25rem;
+}
+.cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .qNtiRvndMCsLxZjeMJKO {
+  font-size: 1.25rem;
 }
 .cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .p73ZrVK0TdkEr6st7NOK {
   display: flex;
@@ -2515,7 +2527,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   font-size: 4vmin;
   color: yellow;
   text-shadow: 2px 2px 1px black;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AAAJ;AAEI;EACE,aAAA;EACA,uBAAA;EACA,WAAA;EACA,mBAAA;EACA,yCAAA;EACA,iBAAA;EACA,aAAA;EACA,8BAAA;AAAN;AACM;EACE,iBAAA;AACR;AAGI;EACE,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,iCAAA;EACA,YAAA;EACA,8BAAA;EACA,iBAAA;EACA,mBAAA;EACA,SAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADN;AAGM;EACE,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,YAAA;EACA,8BAAA;EACA,kCAAA;AADR;AAGQ;EACE,qBAAA;EACA,8BAAA;EACA,eAAA;AADV;AAIQ;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AAFV;AAIU;EACE,aAAA;EACA,yBAAA;AAFZ;AAOM;EACE,kBAAA;EACA,SAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AALR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');\n\n.OrderDetail {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding: 3vmin;\n\n    .sectionHeading {\n      display: flex;\n      justify-content: center;\n      width: 100%;\n      margin-bottom: 3rem;\n      font-family: \"Chelsea Market\", sans-serif;\n      font-size: 1.5rem;\n      color: yellow;\n      text-shadow: 2px 2px 1px black;\n      .orderDate {\n        margin-left: 1rem;\n      }\n    }\n\n    .lineGameContainer {\n      margin-top: 3vmin;\n      padding-top: 2rem;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: column;\n      background-color: rgb(64, 64, 64);\n      color: white;\n      text-shadow: 2px 2px 1px black;\n      font-size: 1.5rem;\n      border-radius: 10px;\n      gap: 3rem;\n      justify-content: flex-start;\n      height: calc(100vh - 18vmin);\n      width: 50vw;\n      \n      .total {\n        width: 100%;\n        display: grid;\n        grid-template-columns: 18.35vw 5.75vw 5.25vw;\n        padding: 1vmin 0;\n        color: white;\n        text-shadow: 2px 2px 1px black;\n        border: .1vmin solid var(--tan-3);\n     \n        .button {\n          background-color: red;\n          text-shadow: 2px 2px 1px black;\n          cursor: pointer;\n        }\n\n        .span {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          font-size: 1.5vw;\n          color: var(--text-dark);\n\n          .right {\n            display: flex;\n            justify-content: flex-end;\n          }\n        }\n      }\n\n      .message {\n        position: absolute;\n        top: 50vh;\n        font-family: \"Chelsea Market\", sans-serif;\n        font-size: 4vmin;\n        color: yellow;\n        text-shadow: 2px 2px 1px black;\n      }\n    }\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AAAJ;AAEI;EACE,aAAA;EACA,uBAAA;EACA,WAAA;EACA,mBAAA;EACA,yCAAA;EACA,iBAAA;EACA,aAAA;EACA,8BAAA;AAAN;AACM;EACE,iBAAA;AACR;AAGI;EACE,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,iCAAA;EACA,YAAA;EACA,8BAAA;EACA,iBAAA;EACA,mBAAA;EACA,SAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;EACA,gBAAA;AADN;AAGM;EACE,WAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,SAAA;EAEA,gBAAA;EACA,YAAA;EACA,8BAAA;EACA,kCAAA;AAFR;AAIQ;EACE,qBAAA;EACA,8BAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;AAFV;AAKQ;EACE,kBAAA;AAHV;AAMQ;EACE,kBAAA;AAJV;AAOQ;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AALV;AAOU;EACE,aAAA;EACA,yBAAA;AALZ;AAUM;EACE,kBAAA;EACA,SAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AARR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');\n\n.OrderDetail {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding: 3vmin;\n\n    .sectionHeading {\n      display: flex;\n      justify-content: center;\n      width: 100%;\n      margin-bottom: 3rem;\n      font-family: \"Chelsea Market\", sans-serif;\n      font-size: 1.5rem;\n      color: yellow;\n      text-shadow: 2px 2px 1px black;\n      .orderDate {\n        margin-left: 1rem;\n      }\n    }\n\n    .lineGameContainer {\n      margin-top: 3vmin;\n      padding-top: 2rem;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: column;\n      background-color: rgb(64, 64, 64);\n      color: white;\n      text-shadow: 2px 2px 1px black;\n      font-size: 1.5rem;\n      border-radius: 10px;\n      gap: 3rem;\n      justify-content: flex-start;\n      height: calc(100vh - 18vmin);\n      width: 75vw;\n      max-width: 40rem;\n      \n      .total {\n        width: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 2rem;\n        \n        padding: 1vmin 0;\n        color: white;\n        text-shadow: 2px 2px 1px black;\n        border: .1vmin solid var(--tan-3);\n     \n        .button {\n          background-color: red;\n          text-shadow: 2px 2px 1px black;\n          cursor: pointer;\n          width: 15vw;\n          height: 3rem;\n          min-width: 5rem;\n        }\n        \n        .totalQty {\n          font-size: 1.25rem;\n        }\n\n        .totalPrice {\n          font-size: 1.25rem;\n        }\n\n        .span {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          font-size: 1.5vw;\n          color: var(--text-dark);\n\n          .right {\n            display: flex;\n            justify-content: flex-end;\n          }\n        }\n      }\n\n      .message {\n        position: absolute;\n        top: 50vh;\n        font-family: \"Chelsea Market\", sans-serif;\n        font-size: 4vmin;\n        color: yellow;\n        text-shadow: 2px 2px 1px black;\n      }\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
@@ -2524,6 +2536,8 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"lineGameContainer": `w_xrohFcLzqrK66BLoMH`,
 	"total": `V5OAbv7QFHo6WglNx0m0`,
 	"button": `zypoFNoBI8rmWRRI9Gn4`,
+	"totalQty": `h9JmrZXsbkyHUL5udmun`,
+	"totalPrice": `qNtiRvndMCsLxZjeMJKO`,
 	"span": `p73ZrVK0TdkEr6st7NOK`,
 	"right": `GtULiQQdndLNSQN4Yc97`,
 	"message": `NAoveQ0xvm5VtSgh6clR`
@@ -2561,13 +2575,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.l6Ner7C7O5I4V69HVVgW {
   margin: 3vmin 0;
   padding: 3vmin;
   overflow-y: scroll;
+  min-width: 8rem;
 }
 .l6Ner7C7O5I4V69HVVgW .zqVYKU3SzotKremHzxQ_ {
   color: var(--text-light);
   font-size: 2rem;
   position: absolute;
   top: 50vh;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;AACJ;AACI;EACI,wBAAA;EACA,eAAA;EACA,kBAAA;EACA,SAAA;AACR","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: rgb(64, 64, 64);\n    border: .1vmin solid var(--tan-3);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n\n    .noOrders {\n        color: var(--text-light);\n        font-size: 2rem;\n        position: absolute;\n        top: calc(50vh);\n    }\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,eAAA;AACJ;AACI;EACI,wBAAA;EACA,eAAA;EACA,kBAAA;EACA,SAAA;AACR","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: rgb(64, 64, 64);\n    border: .1vmin solid var(--tan-3);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    min-width: 8rem;\n\n    .noOrders {\n        color: var(--text-light);\n        font-size: 2rem;\n        position: absolute;\n        top: calc(50vh);\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderList": `l6Ner7C7O5I4V69HVVgW`,
@@ -2607,7 +2622,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
   background-color: white;
   border: 0.2vmin solid var(--tan-3);
   border-radius: 1vmin;
-  font-size: 2vw;
+  font-size: 2.25vw;
+  overflow-x: scroll;
   cursor: pointer;
 }
 
@@ -2624,7 +2640,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
 .SbDKL2bctOyC5ZgA0KfW:not(.mOA_Z5p05rn7VW_2oU68):hover {
   border-color: var(--orange);
   border-width: 0.2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,YAAA;EACA,uBAAA;EACA,kCAAA;EACA,oBAAA;EACA,cAAA;EACA,eAAA;AACJ;;AAEI;EACA,sBAAA;AACJ;;AAEI;EACA,2BAAA;EACA,qBAAA;EACA,eAAA;AACJ;;AAEI;EACA,2BAAA;EACA,qBAAA;AACJ","sourcesContent":[".OrderListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: black;\n    background-color: white;\n    border: .2vmin solid var(--tan-3);\n    border-radius: 1vmin;\n    font-size: 2vw;\n    cursor: pointer;\n    }\n    \n    .OrderListItem > div> div:first-child {\n    margin-bottom: .5vmin;\n    }\n    \n    .OrderListItem.selected {\n    border-color: var(--orange);\n    border-width: .2vmin;\n    cursor: default;\n    }\n    \n    .OrderListItem:not(.selected):hover {\n    border-color: var(--orange);\n    border-width: .2vmin;\n    }"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,YAAA;EACA,uBAAA;EACA,kCAAA;EACA,oBAAA;EACA,iBAAA;EACA,kBAAA;EACA,eAAA;AACJ;;AAEI;EACA,sBAAA;AACJ;;AAEI;EACA,2BAAA;EACA,qBAAA;EACA,eAAA;AACJ;;AAEI;EACA,2BAAA;EACA,qBAAA;AACJ","sourcesContent":[".OrderListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: black;\n    background-color: white;\n    border: .2vmin solid var(--tan-3);\n    border-radius: 1vmin;\n    font-size: 2.25vw;\n    overflow-x: scroll;\n    cursor: pointer;\n    }\n    \n    .OrderListItem > div> div:first-child {\n    margin-bottom: .5vmin;\n    }\n    \n    .OrderListItem.selected {\n    border-color: var(--orange);\n    border-width: .2vmin;\n    cursor: default;\n    }\n    \n    .OrderListItem:not(.selected):hover {\n    border-color: var(--orange);\n    border-width: .2vmin;\n    }"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderListItem": `SbDKL2bctOyC5ZgA0KfW`,

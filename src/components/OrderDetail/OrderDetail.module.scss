@@ -36,12 +36,16 @@
       gap: 3rem;
       justify-content: flex-start;
       height: calc(100vh - 18vmin);
-      width: 50vw;
+      width: 75vw;
+      max-width: 40rem;
       
       .total {
         width: 100%;
-        display: grid;
-        grid-template-columns: 18.35vw 5.75vw 5.25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        
         padding: 1vmin 0;
         color: white;
         text-shadow: 2px 2px 1px black;
@@ -51,6 +55,17 @@
           background-color: red;
           text-shadow: 2px 2px 1px black;
           cursor: pointer;
+          width: 15vw;
+          height: 3rem;
+          min-width: 5rem;
+        }
+        
+        .totalQty {
+          font-size: 1.25rem;
+        }
+
+        .totalPrice {
+          font-size: 1.25rem;
         }
 
         .span {

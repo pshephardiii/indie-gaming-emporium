@@ -40,8 +40,8 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                     disabled={!lineGames.length}
                   >CHECKOUT</button>
                 }
-                <span className={styles.totalQty}>{`${order.totalQty} items`}</span>
-                <span className={styles.right}>${order.orderTotal.toFixed(2)}</span>
+                <span className={styles.totalQty}>{`${order.totalQty} item(s)`}</span>
+                <span className={styles.totalPrice}>${order.orderTotal.toFixed(2)}</span>
               </section>
             </>
             :
