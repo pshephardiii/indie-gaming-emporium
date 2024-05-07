@@ -11,7 +11,7 @@ export default function Game({ user, setUser, cart, setCart, game }) {
 
     async function handleAddToOrder() {
         const updatedCart = await ordersAPI.addGameToCart(game._id);
-        setCart(updatedCart);
+        setCart(updatedCart)
         addedToCart.current = (!addedToCart.current)
 
         if (addedToCart) {

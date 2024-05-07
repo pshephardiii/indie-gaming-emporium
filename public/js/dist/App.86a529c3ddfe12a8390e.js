@@ -2077,12 +2077,12 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.PsBtt6rMda10XQ8FFlfC {
   width: 75vw;
-  min-width: 30rem;
+  min-width: 20rem;
   background-color: rgb(65, 64, 64);
   color: white;
   padding: 0 3rem;
   border-radius: 10px;
-}`, "",{"version":3,"sources":["webpack://./src/components/GameDescription/GameDescription.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,gBAAA;EACA,iCAAA;EACA,YAAA;EACA,eAAA;EACA,mBAAA;AACJ","sourcesContent":[".gameDescription {\n    width: 75vw;\n    min-width: 30rem;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    padding: 0 3rem;\n    border-radius: 10px;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/GameDescription/GameDescription.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,gBAAA;EACA,iCAAA;EACA,YAAA;EACA,eAAA;EACA,mBAAA;AACJ","sourcesContent":[".gameDescription {\n    width: 75vw;\n    min-width: 20rem;\n    background-color: rgb(65, 64, 64);\n    color: white;\n    padding: 0 3rem;\n    border-radius: 10px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"gameDescription": `PsBtt6rMda10XQ8FFlfC`
@@ -2118,12 +2118,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dwhGsGc8rAAtikB5AzXT {
 }
 .dwhGsGc8rAAtikB5AzXT .gw4Tvx0DA9pd791BTyy0 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 4vmin;
-  margin: 0;
   padding: 0;
   list-style: none;
-}`, "",{"version":3,"sources":["webpack://./src/components/GameList/GameList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,UAAA;AACJ;AAAI;EACI,aAAA;EACA,6BAAA;EACA,UAAA;EACA,SAAA;EACA,UAAA;EACA,gBAAA;AAER","sourcesContent":[".gameList {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0;\n    .list {\n        display: flex;\n        justify-content: space-around;\n        gap: 4vmin;\n        margin: 0;\n        padding: 0;\n        list-style: none;\n    }\n}"],"sourceRoot":""}]);
+  flex-flow: row wrap;
+  width: 95vw;
+}`, "",{"version":3,"sources":["webpack://./src/components/GameList/GameList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,UAAA;AACJ;AACI;EACI,aAAA;EACA,uBAAA;EACA,UAAA;EACA,UAAA;EACA,gBAAA;EACA,mBAAA;EACA,WAAA;AACR","sourcesContent":[".gameList {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 0;\n\n    .list {\n        display: flex;\n        justify-content: center;\n        gap: 4vmin;\n        padding: 0;\n        list-style: none;\n        flex-flow: row wrap;\n        width: 95vw;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"gameList": `dwhGsGc8rAAtikB5AzXT`,
@@ -2157,30 +2158,36 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.jSuT0u2wDOCA2dcvVEbJ {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 25vw;
+  min-width: 15rem;
 }
 .jSuT0u2wDOCA2dcvVEbJ .YVZfDiqtcy6fDuqWh4zR {
   text-decoration: none;
   color: white;
-  font-size: 2vw;
+  font-size: clamp(15px, 2vw, 25px);
   text-align: center;
   text-shadow: 2px 2px 2px black;
   width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .jSuT0u2wDOCA2dcvVEbJ .TTRgHQ3vG_GWHBJqZOqA {
   width: 25vw;
+  min-width: 12rem;
   border-radius: 10px;
   box-shadow: 5px 5px 4px black;
 }
 .jSuT0u2wDOCA2dcvVEbJ .TTRgHQ3vG_GWHBJqZOqA:hover {
-  width: 26vw;
-  box-shadow: none;
+  box-shadow: 10px 10px 10px gold;
 }
 .jSuT0u2wDOCA2dcvVEbJ .RGLPJR3RTB76B97J7s5Q {
-  font-size: 2.5vw;
+  font-size: clamp(17px, 2.5vw, 27px);
   margin: 0;
   color: white;
   text-shadow: 2px 2px 2px black;
-}`, "",{"version":3,"sources":["webpack://./src/components/GameListItem/GameListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;AACJ;AACI;EACI,qBAAA;EACA,YAAA;EACA,cAAA;EACA,kBAAA;EACA,8BAAA;EACA,WAAA;AACR;AACI;EACI,WAAA;EACA,mBAAA;EACA,6BAAA;AACR;AAEI;EACI,WAAA;EACA,gBAAA;AAAR;AAEI;EACI,gBAAA;EACA,SAAA;EACA,YAAA;EACA,8BAAA;AAAR","sourcesContent":[".gameListItem {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n\n    .link {\n        text-decoration: none;\n        color: white;\n        font-size: 2vw;\n        text-align: center;\n        text-shadow: 2px 2px 2px black;\n        width: 25vw;\n    }\n    .image {\n        width: 25vw;\n        border-radius: 10px;\n        box-shadow: 5px 5px 4px black;\n\n    }\n    .image:hover {\n        width: 26vw;\n        box-shadow: none;\n    }\n    .price {\n        font-size: 2.5vw;\n        margin: 0;\n        color: white;\n        text-shadow: 2px 2px 2px black;\n\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/GameListItem/GameListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,WAAA;EACA,gBAAA;AACJ;AACI;EACI,qBAAA;EACA,YAAA;EACA,iCAAA;EACA,kBAAA;EACA,8BAAA;EACA,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACR;AACI;EACI,WAAA;EACA,gBAAA;EACA,mBAAA;EACA,6BAAA;AACR;AAEI;EAEI,+BAAA;AADR;AAGI;EACI,mCAAA;EACA,SAAA;EACA,YAAA;EACA,8BAAA;AADR","sourcesContent":[".gameListItem {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 25vw;\n    min-width: 15rem;\n\n    .link {\n        text-decoration: none;\n        color: white;\n        font-size: clamp(15px, 2vw, 25px);\n        text-align: center;\n        text-shadow: 2px 2px 2px black;\n        width: 25vw;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n    }\n    .image {\n        width: 25vw;\n        min-width: 12rem;\n        border-radius: 10px;\n        box-shadow: 5px 5px 4px black;\n\n    }\n    .image:hover {\n        \n        box-shadow: 10px 10px 10px  gold;\n    }\n    .price {\n        font-size: clamp(17px, 2.5vw, 27px);\n        margin: 0;\n        color: white;\n        text-shadow: 2px 2px 2px black;\n\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"gameListItem": `jSuT0u2wDOCA2dcvVEbJ`,
@@ -2249,13 +2256,14 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.zjiXfJpa0yn80lfFraKE {
   list-style-type: none;
   width: 25vw;
+  min-width: 12rem;
   border-radius: 10px;
   box-shadow: 5px 5px 4px black;
 }
 
 .zjiXfJpa0yn80lfFraKE:hover {
   box-shadow: 10px 10px 10px gold;
-}`, "",{"version":3,"sources":["webpack://./src/components/GenreListItem/GenreListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,qBAAA;EACA,WAAA;EACA,mBAAA;EACA,6BAAA;AACJ;;AACA;EACI,+BAAA;AAEJ","sourcesContent":[".GenreListItem {\n    list-style-type: none;\n    width: 25vw;\n    border-radius: 10px;\n    box-shadow: 5px 5px 4px black;\n}\n.GenreListItem:hover {\n    box-shadow: 10px 10px 10px  gold;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/GenreListItem/GenreListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,qBAAA;EACA,WAAA;EACA,gBAAA;EACA,mBAAA;EACA,6BAAA;AACJ;;AACA;EACI,+BAAA;AAEJ","sourcesContent":[".GenreListItem {\n    list-style-type: none;\n    width: 25vw;\n    min-width: 12rem;\n    border-radius: 10px;\n    box-shadow: 5px 5px 4px black;\n}\n.GenreListItem:hover {\n    box-shadow: 10px 10px 10px  gold;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"GenreListItem": `zjiXfJpa0yn80lfFraKE`
@@ -2500,8 +2508,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   text-shadow: 2px 2px 1px black;
   cursor: pointer;
   width: 15vw;
+  text-align: center;
   height: 3rem;
-  min-width: 5rem;
+  min-width: 6rem;
+  border: 2px solid white;
+  font-size: clamp(15px, 2vw, 25px);
 }
 .cPR75kdAXDGVxib0PszB .w_xrohFcLzqrK66BLoMH .V5OAbv7QFHo6WglNx0m0 .h9JmrZXsbkyHUL5udmun {
   font-size: 1.25rem;
@@ -2527,7 +2538,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   font-size: 4vmin;
   color: yellow;
   text-shadow: 2px 2px 1px black;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AAAJ;AAEI;EACE,aAAA;EACA,uBAAA;EACA,WAAA;EACA,mBAAA;EACA,yCAAA;EACA,iBAAA;EACA,aAAA;EACA,8BAAA;AAAN;AACM;EACE,iBAAA;AACR;AAGI;EACE,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,iCAAA;EACA,YAAA;EACA,8BAAA;EACA,iBAAA;EACA,mBAAA;EACA,SAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;EACA,gBAAA;AADN;AAGM;EACE,WAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,SAAA;EAEA,gBAAA;EACA,YAAA;EACA,8BAAA;EACA,kCAAA;AAFR;AAIQ;EACE,qBAAA;EACA,8BAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,eAAA;AAFV;AAKQ;EACE,kBAAA;AAHV;AAMQ;EACE,kBAAA;AAJV;AAOQ;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AALV;AAOU;EACE,aAAA;EACA,yBAAA;AALZ;AAUM;EACE,kBAAA;EACA,SAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AARR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');\n\n.OrderDetail {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding: 3vmin;\n\n    .sectionHeading {\n      display: flex;\n      justify-content: center;\n      width: 100%;\n      margin-bottom: 3rem;\n      font-family: \"Chelsea Market\", sans-serif;\n      font-size: 1.5rem;\n      color: yellow;\n      text-shadow: 2px 2px 1px black;\n      .orderDate {\n        margin-left: 1rem;\n      }\n    }\n\n    .lineGameContainer {\n      margin-top: 3vmin;\n      padding-top: 2rem;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: column;\n      background-color: rgb(64, 64, 64);\n      color: white;\n      text-shadow: 2px 2px 1px black;\n      font-size: 1.5rem;\n      border-radius: 10px;\n      gap: 3rem;\n      justify-content: flex-start;\n      height: calc(100vh - 18vmin);\n      width: 75vw;\n      max-width: 40rem;\n      \n      .total {\n        width: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 2rem;\n        \n        padding: 1vmin 0;\n        color: white;\n        text-shadow: 2px 2px 1px black;\n        border: .1vmin solid var(--tan-3);\n     \n        .button {\n          background-color: red;\n          text-shadow: 2px 2px 1px black;\n          cursor: pointer;\n          width: 15vw;\n          height: 3rem;\n          min-width: 5rem;\n        }\n        \n        .totalQty {\n          font-size: 1.25rem;\n        }\n\n        .totalPrice {\n          font-size: 1.25rem;\n        }\n\n        .span {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          font-size: 1.5vw;\n          color: var(--text-dark);\n\n          .right {\n            display: flex;\n            justify-content: flex-end;\n          }\n        }\n      }\n\n      .message {\n        position: absolute;\n        top: 50vh;\n        font-family: \"Chelsea Market\", sans-serif;\n        font-size: 4vmin;\n        color: yellow;\n        text-shadow: 2px 2px 1px black;\n      }\n    }\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAEA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AAAJ;AAEI;EACE,aAAA;EACA,uBAAA;EACA,WAAA;EACA,mBAAA;EACA,yCAAA;EACA,iBAAA;EACA,aAAA;EACA,8BAAA;AAAN;AACM;EACE,iBAAA;AACR;AAGI;EACE,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,iCAAA;EACA,YAAA;EACA,8BAAA;EACA,iBAAA;EACA,mBAAA;EACA,SAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;EACA,gBAAA;AADN;AAGM;EACE,WAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,SAAA;EAEA,gBAAA;EACA,YAAA;EACA,8BAAA;EACA,kCAAA;AAFR;AAIQ;EACE,qBAAA;EACA,8BAAA;EACA,eAAA;EACA,WAAA;EACA,kBAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,iCAAA;AAFV;AAKQ;EACE,kBAAA;AAHV;AAMQ;EACE,kBAAA;AAJV;AAOQ;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;AALV;AAOU;EACE,aAAA;EACA,yBAAA;AALZ;AAUM;EACE,kBAAA;EACA,SAAA;EACA,yCAAA;EACA,gBAAA;EACA,aAAA;EACA,8BAAA;AARR","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Anta&family=Chelsea+Market&display=swap');\n\n.OrderDetail {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding: 3vmin;\n\n    .sectionHeading {\n      display: flex;\n      justify-content: center;\n      width: 100%;\n      margin-bottom: 3rem;\n      font-family: \"Chelsea Market\", sans-serif;\n      font-size: 1.5rem;\n      color: yellow;\n      text-shadow: 2px 2px 1px black;\n      .orderDate {\n        margin-left: 1rem;\n      }\n    }\n\n    .lineGameContainer {\n      margin-top: 3vmin;\n      padding-top: 2rem;\n      margin-left: auto;\n      margin-right: auto;\n      display: flex;\n      flex-direction: column;\n      background-color: rgb(64, 64, 64);\n      color: white;\n      text-shadow: 2px 2px 1px black;\n      font-size: 1.5rem;\n      border-radius: 10px;\n      gap: 3rem;\n      justify-content: flex-start;\n      height: calc(100vh - 18vmin);\n      width: 75vw;\n      max-width: 40rem;\n      \n      .total {\n        width: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        gap: 2rem;\n        \n        padding: 1vmin 0;\n        color: white;\n        text-shadow: 2px 2px 1px black;\n        border: .1vmin solid var(--tan-3);\n     \n        .button {\n          background-color: red;\n          text-shadow: 2px 2px 1px black;\n          cursor: pointer;\n          width: 15vw;\n          text-align: center;\n          height: 3rem;\n          min-width: 6rem;\n          border: 2px solid white;\n          font-size: clamp(15px, 2vw, 25px)\n        }\n        \n        .totalQty {\n          font-size: 1.25rem;\n        }\n\n        .totalPrice {\n          font-size: 1.25rem;\n        }\n\n        .span {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          font-size: 1.5vw;\n          color: var(--text-dark);\n\n          .right {\n            display: flex;\n            justify-content: flex-end;\n          }\n        }\n      }\n\n      .message {\n        position: absolute;\n        top: 50vh;\n        font-family: \"Chelsea Market\", sans-serif;\n        font-size: 4vmin;\n        color: yellow;\n        text-shadow: 2px 2px 1px black;\n      }\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
