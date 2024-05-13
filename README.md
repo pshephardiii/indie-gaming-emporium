@@ -4,6 +4,10 @@
 
 A full-stack react app that's set up for game browsing and purchases. Includes cart and checkout functionality, user authentication and authorization, as well as complete styling. Fifteen (totally made up!) games have been seeded in with the relevant genres, descriptions, and images.
 
+## Live Link
+
+https://cafe.paulshephard.me/
+
 ## User Stories:
 
 + "As a user, I want to be able to easily navigate around the site and browse the available games by genre."
